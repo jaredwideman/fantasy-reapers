@@ -1,0 +1,102 @@
+{
+    "players": [{
+        "name": "McIntyre",
+        "positions": "C",
+        "owners": ["wideman", "easterbrook"]
+    }, {
+        "name": "Frobel",
+        "positions": "SS",
+        "owners": ["todd", "coughlan"]
+    }, {
+        "name": "Lavigne",
+        "positions": "P|3B",
+        "owners": ["maclean", "berthiaume"]
+    }, {
+        "name": "Todd",
+        "positions": "3B",
+        "owners": ["ellingham", "coughlan"]
+    }, {
+        "name": "Poirier",
+        "positions": "SS|C",
+        "owners": ["berthiaume", "wideman"]
+    }, {
+        "name": "Gray",
+        "positions": "2B",
+        "owners": ["", ""]
+    }, {
+        "name": "Brady",
+        "positions": "1B",
+        "owners": ["", ""]
+    }, {
+        "name": "Jmurray-b",
+        "positions": "OF?",
+        "owners": ["maclean", "todd"]
+    }, {
+        "name": "Wideman",
+        "positions": "OF|1B",
+        "owners": ["easterbrook", "ellingham"]
+    }, {
+        "name": "MacLean",
+        "positions": "OF",
+        "owners": ["berthiaume", "coughlan"]
+    }, {
+        "name": "Easterbrook",
+        "positions": "OF",
+        "owners": ["", ""]
+    }, {
+        "name": "Coughlan",
+        "positions": "OF",
+        "owners": ["", ""]
+    }, {
+        "name": "Ellingham-p",
+        "positions": "P",
+        "owners": ["maclean", "todd"]
+    }, {
+        "name": "Dmurray",
+        "positions": "P",
+        "owners": ["gray", "ellingham"]
+    }, {
+        "name": "Avery",
+        "positions": "P",
+        "owners": ["easterbrook", "coughlan"]
+    }, {
+        "name": "Jmurray-p",
+        "positions": "P",
+        "owners": ["wideman", "berthiaume"]
+    }, {
+        "name": "Frobel",
+        "positions": "RP",
+        "owners": ["berthiaume", ""]
+    }, {
+        "name": "Allotherp",
+        "positions": "RP",
+        "owners": ["", ""]
+    }, {
+        "name": "Todd",
+        "positions": "RP",
+        "owners": ["gray", "maclean"]
+    }, {
+        "name": "Lavigne",
+        "positions": "RP",
+        "owners": ["coughlan", "todd"]
+    }, {
+        "name": "Postma",
+        "positions": "OF",
+        "owners": ["maclean", ""]
+    }, {
+        "name": "Avery",
+        "positions": "2B",
+        "owners": ["", ""]
+    }, {
+        "name": "Berthiaume",
+        "positions": "OF",
+        "owners": ["", ""]
+    }, {
+        "name": "Ellingham-b",
+        "positions": "1B|OF",
+        "owners": ["easterbrook", "coughlan"]
+    }],
+    "owners": [
+        "berthiaume", "coughlan", "easterbrook", "ellingham", "gray", "maclean", "todd", "wideman"
+    ]
+}

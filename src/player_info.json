@@ -1,0 +1,114 @@
+{
+    "players": [{
+        "name": "McIntyre",
+        "positions": "C",
+        "batting_owners": ["wideman", "easterbrook"],
+        "pitching_owners": [],
+        "primarily_pitcher": false
+    }, {
+        "name": "Frobel",
+        "positions": "SS | RP",
+        "batting_owners": ["todd", "coughlan"],
+        "pitching_owners": ["berthiaume", ""],
+        "primarily_pitcher": false
+    }, {
+        "name": "Lavigne",
+        "positions": "P | 3B",
+        "batting_owners": ["maclean", "berthiaume"],
+        "pitching_owners": ["coughlan", "todd"],
+        "primarily_pitcher": true
+    }, {
+        "name": "Todd",
+        "positions": "3B | RP",
+        "batting_owners": ["ellingham", "coughlan"],
+        "pitching_owners": ["gray", "maclean"],
+        "primarily_pitcher": false
+    }, {
+        "name": "Poirier",
+        "positions": "SS | C",
+        "batting_owners": ["berthiaume", "wideman"],
+        "pitching_owners": [],
+        "primarily_pitcher": false
+    }, {
+        "name": "Gray",
+        "positions": "2B",
+        "batting_owners": ["ellingham", ""],
+        "pitching_owners": [],
+        "primarily_pitcher": false
+    }, {
+        "name": "Brady",
+        "positions": "1B",
+        "batting_owners": ["", ""],
+        "pitching_owners": [],
+        "primarily_pitcher": false
+    }, {
+        "name": "Jerome Murray",
+        "positions": "SP | Util",
+        "batting_owners": ["maclean", "todd"],
+        "pitching_owners": ["wideman", "berthiaume"],
+        "primarily_pitcher": true
+    }, {
+        "name": "Wideman",
+        "positions": "OF | 1B",
+        "batting_owners": ["easterbrook", "ellingham"],
+        "pitching_owners": [],
+        "primarily_pitcher": false
+    }, {
+        "name": "MacLean",
+        "positions": "OF",
+        "batting_owners": ["berthiaume", "coughlan"],
+        "pitching_owners": [],
+        "primarily_pitcher": false
+    }, {
+        "name": "Easterbrook",
+        "positions": "OF",
+        "batting_owners": ["", ""],
+        "pitching_owners": [],
+        "primarily_pitcher": false
+    }, {
+        "name": "Coughlan",
+        "positions": "OF",
+        "batting_owners": ["", ""],
+        "pitching_owners": [],
+        "primarily_pitcher": false
+    }, {
+        "name": "Ellingham",
+        "positions": "SP | Util",
+        "batting_owners": ["easterbrook", "coughlan"],
+        "pitching_owners": ["maclean", "todd"],
+        "primarily_pitcher": true
+    }, {
+        "name": "Dominic Murray",
+        "positions": "SP",
+        "batting_owners": [],
+        "pitching_owners": ["gray", "ellingham"],
+        "primarily_pitcher": true
+    }, {
+        "name": "Avery",
+        "positions": "P | OF",
+        "batting_owners": ["", ""],
+        "pitching_owners": ["easterbrook", "coughlan"],
+        "primarily_pitcher": true
+    }, {
+        "name": "(All Other Relievers)",
+        "positions": "RP",
+        "batting_owners": ["wideman", ""],
+        "pitching_owners": [],
+        "primarily_pitcher": true
+    }, {
+        "name": "Postma",
+        "positions": "OF",
+        "batting_owners": ["maclean", ""],
+        "pitching_owners": [],
+        "primarily_pitcher": false
+    }, {
+        "name": "Berthiaume",
+        "positions": "OF",
+        "batting_owners": ["", ""],
+        "pitching_owners": [],
+        "primarily_pitcher": false
+    }],
+    "owners": [
+        "berthiaume", "coughlan", "easterbrook", "ellingham", "gray", "maclean", "todd", "wideman"
+    ]
+}

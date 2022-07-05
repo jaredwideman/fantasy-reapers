@@ -1,40 +1,61 @@
-import React from 'react';
+import React, { useState } from 'react';
 import {
+  Center,
   ChakraProvider,
-  Box,
-  Text,
-  Link,
-  VStack,
-  Code,
-  Grid,
   theme,
+  Select,
+  Tab,
+  Tabs,
+  TabList,
+  TabPanel,
+  TabPanels
 } from '@chakra-ui/react';
-import { ColorModeSwitcher } from './ColorModeSwitcher';
-import { Logo } from './Logo';
+import PlayerCard from './PlayerCard';
+
+const player_info = require('./player_info.json');
 
 function App() {
+  const [selectedPlayer, setSelectedPlayer] = useState("");
+  const playerName = player_info.players.find(player => player.name === selectedPlayer);
   return (
     <ChakraProvider theme={theme}>
-      <Box textAlign="center" fontSize="xl">
-        <Grid minH="100vh" p={3}>
-          <ColorModeSwitcher justifySelf="flex-end" />
-          <VStack spacing={8}>
-            <Logo h="40vmin" pointerEvents="none" />
-            <Text>
-              Edit <Code fontSize="xl">src/App.js</Code> and save to reload.
-            </Text>
-            <Link
-              color="teal.500"
-              href="https://chakra-ui.com"
-              fontSize="2xl"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Learn Chakra
-            </Link>
-          </VStack>
-        </Grid>
-      </Box>
+      <Tabs isFitted variant='enclosed'>
+        <TabList mb='1em'>
+          <Tab>Dashboard</Tab>
+          <Tab>Reaper Stats</Tab>
+          <Tab>Fantasy Owner Stats</Tab>
+        </TabList>
+        <TabPanels>
+          <TabPanel>
+            To-do
+          </TabPanel>
+          <TabPanel>
+          <Select placeholder='Select Player...' onChange={e => setSelectedPlayer(e.target.value)}>
+            {
+              player_info.players.map(player => {
+                return player.name ? <option value={player.name}>{player.name}</option> : null;
+              })
+            }
+          </Select>
+          <Center>
+          {selectedPlayer && <PlayerCard 
+                                name={selectedPlayer} 
+                                positions={playerName.positions} 
+                                primarilyPitcher={playerName.primarily_pitcher} />}
+          </Center>
+          </TabPanel>
+          <TabPanel>
+            <Select placeholder='Select Owner...'>
+              {
+                player_info.owners.map(owner => {
+                  return <option value={owner}>{owner}</option>;
+                })
+              }
+            </Select>
+          </TabPanel>
+        </TabPanels>
+      </Tabs>
+      
     </ChakraProvider>
   );
 }
