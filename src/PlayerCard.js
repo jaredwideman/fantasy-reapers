@@ -69,7 +69,7 @@ function PlayerCard(props) {
 
     const battingStatsDisplay = (<TableContainer>
       <Table size='sm' variant='simple'>
-        <TableCaption>Baseball is fun</TableCaption>
+        <TableCaption></TableCaption>
         <Thead>
           <Tr>
             <Th>Category</Th>
@@ -159,7 +159,7 @@ function PlayerCard(props) {
 
     const pitchingStatsDisplay = (<TableContainer>
       <Table size='sm' variant='simple'>
-        <TableCaption>Baseball is fun</TableCaption>
+        <TableCaption></TableCaption>
         <Thead>
           <Tr>
             <Th>Category</Th>
