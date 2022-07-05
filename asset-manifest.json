@@ -1,0 +1,12 @@
+{
+  "files": {
+    "main.js": "/jaredwideman/static/js/main.6c0ae051.js",
+    "static/js/377.bc2c3925.chunk.js": "/jaredwideman/static/js/377.bc2c3925.chunk.js",
+    "index.html": "/jaredwideman/index.html",
+    "main.6c0ae051.js.map": "/jaredwideman/static/js/main.6c0ae051.js.map",
+    "377.bc2c3925.chunk.js.map": "/jaredwideman/static/js/377.bc2c3925.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/js/main.6c0ae051.js"
+  ]
+}
