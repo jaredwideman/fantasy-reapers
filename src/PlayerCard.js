@@ -159,7 +159,7 @@ function PlayerCard(props) {
 
     const pitchingStatsDisplay = (<TableContainer>
       <Table size='sm' variant='simple'>
-        <TableCaption></TableCaption>
+        <TableCaption>    </TableCaption>
         <Thead>
           <Tr>
             <Th>Category</Th>
@@ -240,7 +240,7 @@ function PlayerCard(props) {
     return (
       <Box maxW='lg' borderWidth='1px' borderRadius='lg' overflow='hidden'>
         <Center>
-          <Image src={`/headshots/${props.name.toLowerCase()}.png`} alt={`${props.name}`} boxSize='150px' borderRadius='full' marginTop={6} objectFit='cover'/>
+          <Image src={`headshots/${props.name.toLowerCase()}.png`} alt={`${props.name}`} boxSize='150px' borderRadius='full' marginTop={6} objectFit='cover'/>
         </Center>
         <Center>
             <Box
