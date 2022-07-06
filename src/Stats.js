@@ -5,7 +5,7 @@ const statsSheetPitching = require('./pitching_stats.json');
 const statsSheetPitchingExtra = require('./pitching_stats_extra.json');
 const player_info = require('./player_info.json');
 
-export function getPlayerBattingTotal(name) {
+function getPlayerBattingTotal(name) {
     let total = 0;
     [{
         'stat': 'R',
@@ -69,7 +69,7 @@ export function getPlayerBattingTotal(name) {
     return total; 
 }
 
-export function getPlayerPitchingTotal(name) {
+function getPlayerPitchingTotal(name) {
     let total = 0;
     [{
         'stat': 'W',
@@ -170,12 +170,10 @@ export function getAllOtherRelieversTotal() {
         'multiplier': 2,
         'sheet': statsSheetPitchingExtra
     }].forEach(stat_obj => {
-        total += Number(getStatTotal(stat_obj.stat, stat_obj.sheet)) * stat_obj.multiplier;
+        total += Number(getStatTotal(null, stat_obj.stat, stat_obj.sheet)) * stat_obj.multiplier;
     });
     return total - mains; 
 }
-
-getAllOtherRelieversTotal(); // delete
 
 export function getFantasyOwnerBattingTotals(owner_name) {
     const owners_batters = player_info.players.filter(player => {
@@ -211,6 +209,6 @@ export function getStat(playerName, identifier, sheet=statsSheet) {
     ]?.value
 }
 
-function getStatTotal(identifier, sheet=statsSheet) {
+export function getStatTotal(playerName, identifier, sheet=statsSheet) {
     return sheet.totals[0]?.stats[sheet.totals[0].stats.findIndex(stat => stat.identifier.key === identifier)]?.value
 }

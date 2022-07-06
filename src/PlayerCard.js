@@ -18,7 +18,7 @@ import {
   TabPanels
 } from '@chakra-ui/react';
 
-import { getStat } from './Stats'; 
+import { getStat, getStatTotal } from './Stats'; 
 
 const statsSheetExtra = require('./batting_stats_extra.json');
 const statsSheetFielding = require('./fielding_stats.json');
@@ -26,38 +26,68 @@ const statsSheetPitching = require('./pitching_stats.json');            // https
 const statsSheetPitchingExtra = require('./pitching_stats_extra.json'); // https://gc.com/stats/team/62702155c4a63df6dd0f8dea/?stats_requested=%5B%7B%22category%22%3A%22defense%22%2C%22key%22%3A%22outs%22%7D%2C%7B%22category%22%3A%22defense%22%2C%22key%22%3A%22LOB%22%7D%2C%7B%22category%22%3A%22defense%22%2C%22key%22%3A%22BK%22%7D%2C%7B%22category%22%3A%22defense%22%2C%22key%22%3A%22PIK%22%7D%2C%7B%22category%22%3A%22defense%22%2C%22key%22%3A%22SB%22%7D%2C%7B%22category%22%3A%22defense%22%2C%22key%22%3A%22CS%22%7D%2C%7B%22category%22%3A%22defense%22%2C%22key%22%3A%22SB%25%22%7D%5D&qualifying_stat=%7B%22key%22%3A%22GP%3AP%22%2C%22category%22%3A%22defense%22%7D&game_filter=All
 
 function PlayerCard(props) {
+    let getStatFunction = getStat;
+    const allOtherRelievers = props.name === "(All Other Relievers)";
+    if (allOtherRelievers) {
+      getStatFunction = getStatTotal;
+    }
     // Batting Stats
-    const runs = getStat(props.name, 'R');
-    const hits = getStat(props.name, 'H');
-    const singles = getStat(props.name, '1B');
-    const doubles = getStat(props.name, '2B');
-    const triples = getStat(props.name, '3B');
-    const homers = getStat(props.name, 'HR');
-    const rbis = getStat(props.name, 'RBI');
-    const sb = getStat(props.name, 'SB', statsSheetExtra);
-    const cs = getStat(props.name, 'CS', statsSheetExtra);
-    const strikeouts = getStat(props.name, 'SO');
-    const walks = getStat(props.name, 'BB');
-    const hbp = getStat(props.name, 'HBP');
-    const error = getStat(props.name, 'E', statsSheetFielding);
-    const PIK = getStat(props.name, 'PIK', statsSheetExtra);
+    const runs = getStatFunction(props.name, 'R');
+    const hits = getStatFunction(props.name, 'H');
+    const singles = getStatFunction(props.name, '1B');
+    const doubles = getStatFunction(props.name, '2B');
+    const triples = getStatFunction(props.name, '3B');
+    const homers = getStatFunction(props.name, 'HR');
+    const rbis = getStatFunction(props.name, 'RBI');
+    const sb = getStatFunction(props.name, 'SB', statsSheetExtra);
+    const cs = getStatFunction(props.name, 'CS', statsSheetExtra);
+    const strikeouts = getStatFunction(props.name, 'SO');
+    const walks = getStatFunction(props.name, 'BB');
+    const hbp = getStatFunction(props.name, 'HBP');
+    const error = getStatFunction(props.name, 'E', statsSheetFielding);
+    const PIK = getStatFunction(props.name, 'PIK', statsSheetExtra);
     const total_batting = Number(runs) + Number(hits) * 0.5 + Number(singles) + Number(doubles) * 2 + Number(triples) * 3 + Number(homers) * 4 + Number(rbis) + Number(sb) * 2 + Number(cs) * -2 + Number(strikeouts) * -1 + Number(walks) * 0.5 + Number(hbp) * 0.5 + Number(PIK) * -2 + Number(error) * -1;
 
     // Pitching Stats
-    const wins = getStat(props.name, 'W', statsSheetPitching);
-    const losses = getStat(props.name, 'L', statsSheetPitching);
-    const saves = getStat(props.name, 'SV', statsSheetPitching);
-    const blown_saves = getStat(props.name, 'BS', statsSheetPitching);
-    const hits_pitcher = getStat(props.name, 'H', statsSheetPitching);
-    const strikeouts_pitcher = getStat(props.name, 'SO', statsSheetPitching);
-    const walks_pitcher = getStat(props.name, 'BB', statsSheetPitching);
-    const hbp_pitcher = getStat(props.name, 'HBP', statsSheetPitching);
-    const earned_runs = getStat(props.name, 'ER', statsSheetPitching);
-    const outs = getStat(props.name, 'outs', statsSheetPitching);
-    const PIK_pitcher = getStat(props.name, 'PIK', statsSheetPitchingExtra);
-    const no_hitters = 0; // not tracked by gamechanger...
-    const total_pitching = Number(wins)*5 + Number(losses)*4 + Number(saves)*7 + Number(blown_saves)*-7 + Number(hits_pitcher)*-0.5 + Number(strikeouts_pitcher) + Number(walks_pitcher)*-1 + Number(hbp_pitcher)*-1 + Number(earned_runs)*-1 + Number(outs)*0.5 + Number(PIK_pitcher)*2 + Number(no_hitters)*5; // todo
+    let wins = getStatFunction(props.name, 'W', statsSheetPitching);
+    let losses = getStatFunction(props.name, 'L', statsSheetPitching);
+    let saves = getStatFunction(props.name, 'SV', statsSheetPitching);
+    let blown_saves = getStatFunction(props.name, 'BS', statsSheetPitching);
+    let hits_pitcher = getStatFunction(props.name, 'H', statsSheetPitching);
+    let strikeouts_pitcher = getStatFunction(props.name, 'SO', statsSheetPitching);
+    let walks_pitcher = getStatFunction(props.name, 'BB', statsSheetPitching);
+    let hbp_pitcher = getStatFunction(props.name, 'HBP', statsSheetPitching);
+    let earned_runs = getStatFunction(props.name, 'ER', statsSheetPitching);
+    let outs = getStatFunction(props.name, 'outs', statsSheetPitching);
+    let PIK_pitcher = getStatFunction(props.name, 'PIK', statsSheetPitchingExtra);
+    let no_hitters = 0; // not tracked by gamechanger...
 
+    if (allOtherRelievers) {
+      wins -= (Number(getStat('Lavigne', 'W', statsSheetPitching)) + Number(getStat('Ellingham', 'W', statsSheetPitching)) + Number(getStat('Avery', 'W', statsSheetPitching)) + Number(getStat('Dominic Murray', 'W', statsSheetPitching)) + Number(getStat('Jerome Murray', 'W', statsSheetPitching)) + Number(getStat('Todd', 'W', statsSheetPitching)) + Number(getStat('Frobel', 'W', statsSheetPitching)));
+
+      losses -= (Number(getStat('Lavigne', 'L', statsSheetPitching)) + Number(getStat('Ellingham', 'L', statsSheetPitching)) + Number(getStat('Avery', 'L', statsSheetPitching)) + Number(getStat('Dominic Murray', 'L', statsSheetPitching)) + Number(getStat('Jerome Murray', 'L', statsSheetPitching)) + Number(getStat('Todd', 'L', statsSheetPitching)) + Number(getStat('Frobel', 'L', statsSheetPitching)));
+
+      saves -= (Number(getStat('Lavigne', 'SV', statsSheetPitching)) + Number(getStat('Ellingham', 'SV', statsSheetPitching)) + Number(getStat('Avery', 'SV', statsSheetPitching)) + Number(getStat('Dominic Murray', 'SV', statsSheetPitching)) + Number(getStat('Jerome Murray', 'SV', statsSheetPitching)) + Number(getStat('Todd', 'SV', statsSheetPitching)) + Number(getStat('Frobel', 'SV', statsSheetPitching)));
+
+      blown_saves -= (Number(getStat('Lavigne', 'BS', statsSheetPitching)) + Number(getStat('Ellingham', 'BS', statsSheetPitching)) + Number(getStat('Avery', 'BS', statsSheetPitching)) + Number(getStat('Dominic Murray', 'BS', statsSheetPitching)) + Number(getStat('Jerome Murray', 'BS', statsSheetPitching)) + Number(getStat('Todd', 'BS', statsSheetPitching)) + Number(getStat('Frobel', 'BS', statsSheetPitching)));
+
+      hits_pitcher -= (Number(getStat('Lavigne', 'H', statsSheetPitching)) + Number(getStat('Ellingham', 'H', statsSheetPitching)) + Number(getStat('Avery', 'H', statsSheetPitching)) + Number(getStat('Dominic Murray', 'H', statsSheetPitching)) + Number(getStat('Jerome Murray', 'H', statsSheetPitching)) + Number(getStat('Todd', 'H', statsSheetPitching)) + Number(getStat('Frobel', 'H', statsSheetPitching)));
+
+      strikeouts_pitcher -= (Number(getStat('Lavigne', 'SO', statsSheetPitching)) + Number(getStat('Ellingham', 'SO', statsSheetPitching)) + Number(getStat('Avery', 'SO', statsSheetPitching)) + Number(getStat('Dominic Murray', 'SO', statsSheetPitching)) + Number(getStat('Jerome Murray', 'SO', statsSheetPitching)) + Number(getStat('Todd', 'SO', statsSheetPitching)) + Number(getStat('Frobel', 'SO', statsSheetPitching)));
+
+      walks_pitcher -= (Number(getStat('Lavigne', 'BB', statsSheetPitching)) + Number(getStat('Ellingham', 'BB', statsSheetPitching)) + Number(getStat('Avery', 'BB', statsSheetPitching)) + Number(getStat('Dominic Murray', 'BB', statsSheetPitching)) + Number(getStat('Jerome Murray', 'BB', statsSheetPitching)) + Number(getStat('Todd', 'BB', statsSheetPitching)) + Number(getStat('Frobel', 'BB', statsSheetPitching)));
+
+      hbp_pitcher -= (Number(getStat('Lavigne', 'HBP', statsSheetPitching)) + Number(getStat('Ellingham', 'HBP', statsSheetPitching)) + Number(getStat('Avery', 'HBP', statsSheetPitching)) + Number(getStat('Dominic Murray', 'HBP', statsSheetPitching)) + Number(getStat('Jerome Murray', 'HBP', statsSheetPitching)) + Number(getStat('Todd', 'HBP', statsSheetPitching)) + Number(getStat('Frobel', 'HBP', statsSheetPitching)));
+
+      earned_runs -= (Number(getStat('Lavigne', 'ER', statsSheetPitching)) + Number(getStat('Ellingham', 'ER', statsSheetPitching)) + Number(getStat('Avery', 'ER', statsSheetPitching)) + Number(getStat('Dominic Murray', 'ER', statsSheetPitching)) + Number(getStat('Jerome Murray', 'ER', statsSheetPitching)) + Number(getStat('Todd', 'ER', statsSheetPitching)) + Number(getStat('Frobel', 'ER', statsSheetPitching)));
+
+      outs -= (Number(getStat('Lavigne', 'outs', statsSheetPitching)) + Number(getStat('Ellingham', 'outs', statsSheetPitching)) + Number(getStat('Avery', 'outs', statsSheetPitching)) + Number(getStat('Dominic Murray', 'outs', statsSheetPitching)) + Number(getStat('Jerome Murray', 'outs', statsSheetPitching)) + Number(getStat('Todd', 'outs', statsSheetPitching)) + Number(getStat('Frobel', 'outs', statsSheetPitching)));
+
+      PIK_pitcher -= (Number(getStat('Lavigne', 'PIK', statsSheetPitchingExtra)) + Number(getStat('Ellingham', 'PIK', statsSheetPitchingExtra)) + Number(getStat('Avery', 'PIK', statsSheetPitchingExtra)) + Number(getStat('Dominic Murray', 'PIK', statsSheetPitchingExtra)) + Number(getStat('Jerome Murray', 'PIK', statsSheetPitchingExtra)) + Number(getStat('Todd', 'PIK', statsSheetPitchingExtra)) + Number(getStat('Frobel', 'PIK', statsSheetPitchingExtra)));
+    }
+
+    const total_pitching = Number(wins)*5 + Number(losses)*4 + Number(saves)*7 + Number(blown_saves)*-7 + Number(hits_pitcher)*-0.5 + Number(strikeouts_pitcher) + Number(walks_pitcher)*-1 + Number(hbp_pitcher)*-1 + Number(earned_runs)*-1 + Number(outs)*0.5 + Number(PIK_pitcher)*2 + Number(no_hitters)*5;
+    
     const isBatter = Boolean(props.positions.match(/1B|2B|3B|SS|OF|C|DH|Util/g));
     const isPitcher = Boolean(props.positions.match(/[P]/g));
     const isPitcherPrimarily = props.primarilyPitcher ?? false;
