@@ -1,8 +1,6 @@
 import {
-    Badge,
     Box,
     Center,
-    Image,
     Table,
     Thead,
     Tbody,
@@ -31,6 +29,7 @@ function Dashboard(props) {
     console.log(JSON.stringify(table_contents))
 
     return (    
+        <Center>
     <Box p='6' maxW='lg' borderWidth='1px' borderRadius='lg' overflow='hidden' style={{"text-transform": "capitalize"}}>
 <TableContainer>
     <Table size='sm' variant='simple'>
@@ -53,7 +52,8 @@ function Dashboard(props) {
       </Tbody>
     </Table>
   </TableContainer>
-  </Box>)
+  </Box>
+  </Center>)
 }
 
 export default Dashboard;
