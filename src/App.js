@@ -11,24 +11,26 @@ import {
   TabPanels
 } from '@chakra-ui/react';
 import PlayerCard from './PlayerCard';
+import OwnerCard from './OwnerCard';
 
 const player_info = require('./player_info.json');
 
 function App() {
   const [selectedPlayer, setSelectedPlayer] = useState("");
+  const [selectedOwner, setSelectedOwner] = useState("");
   const playerName = player_info.players.find(player => player.name === selectedPlayer);
   return (
     <ChakraProvider theme={theme}>
       <Tabs isFitted variant='enclosed'>
         <TabList mb='1em'>
-          <Tab>Dashboard</Tab>
+          {/* <Tab>Dashboard</Tab> */}
           <Tab>Reaper Stats</Tab>
           <Tab>Fantasy Owner Stats</Tab>
         </TabList>
         <TabPanels>
-          <TabPanel>
+          {/* <TabPanel>
             To-do
-          </TabPanel>
+          </TabPanel> */}
           <TabPanel>
           <Select placeholder='Select Player...' onChange={e => setSelectedPlayer(e.target.value)}>
             {
@@ -45,13 +47,17 @@ function App() {
           </Center>
           </TabPanel>
           <TabPanel>
-            <Select placeholder='Select Owner...'>
+            <Select placeholder='Select Owner...' onChange={e => setSelectedOwner(e.target.value)}>
               {
                 player_info.owners.map(owner => {
                   return <option value={owner}>{owner}</option>;
                 })
               }
             </Select>
+            <Center>
+              {selectedOwner && <OwnerCard 
+                                    name={selectedOwner} />}
+          </Center>
           </TabPanel>
         </TabPanels>
       </Tabs>

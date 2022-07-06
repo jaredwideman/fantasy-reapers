@@ -18,19 +18,14 @@ import {
   TabPanels
 } from '@chakra-ui/react';
 
-const statsSheet = require('./batting_stats.json');
+import { getStat } from './Stats'; 
+
 const statsSheetExtra = require('./batting_stats_extra.json');
 const statsSheetFielding = require('./fielding_stats.json');
 const statsSheetPitching = require('./pitching_stats.json');            // https://gc.com/stats/team/62702155c4a63df6dd0f8dea/?stats_requested=%5B%7B%22category%22%3A%22defense%22%2C%22key%22%3A%22outs%22%7D%2C%7B%22category%22%3A%22defense%22%2C%22key%22%3A%22GP%3AP%22%7D%2C%7B%22category%22%3A%22defense%22%2C%22key%22%3A%22GS%22%7D%2C%7B%22category%22%3A%22defense%22%2C%22key%22%3A%22W%22%7D%2C%7B%22category%22%3A%22defense%22%2C%22key%22%3A%22L%22%7D%2C%7B%22category%22%3A%22defense%22%2C%22key%22%3A%22SV%22%7D%2C%7B%22category%22%3A%22defense%22%2C%22key%22%3A%22SVO%22%7D%2C%7B%22category%22%3A%22defense%22%2C%22key%22%3A%22BS%22%7D%2C%7B%22category%22%3A%22defense%22%2C%22key%22%3A%22SV%25%22%7D%2C%7B%22category%22%3A%22defense%22%2C%22key%22%3A%22H%22%7D%2C%7B%22category%22%3A%22defense%22%2C%22key%22%3A%22R%22%7D%2C%7B%22category%22%3A%22defense%22%2C%22key%22%3A%22ER%22%7D%2C%7B%22category%22%3A%22defense%22%2C%22key%22%3A%22BB%22%7D%2C%7B%22category%22%3A%22defense%22%2C%22key%22%3A%22SO%22%7D%2C%7B%22category%22%3A%22defense%22%2C%22key%22%3A%22HBP%22%7D%2C%7B%22category%22%3A%22defense%22%2C%22key%22%3A%22ERA%22%7D%2C%7B%22category%22%3A%22defense%22%2C%22key%22%3A%22WHIP%22%7D%5D&qualifying_stat=%7B%22key%22%3A%22GP%3AP%22%2C%22category%22%3A%22defense%22%7D&game_filter=All
 const statsSheetPitchingExtra = require('./pitching_stats_extra.json'); // https://gc.com/stats/team/62702155c4a63df6dd0f8dea/?stats_requested=%5B%7B%22category%22%3A%22defense%22%2C%22key%22%3A%22outs%22%7D%2C%7B%22category%22%3A%22defense%22%2C%22key%22%3A%22LOB%22%7D%2C%7B%22category%22%3A%22defense%22%2C%22key%22%3A%22BK%22%7D%2C%7B%22category%22%3A%22defense%22%2C%22key%22%3A%22PIK%22%7D%2C%7B%22category%22%3A%22defense%22%2C%22key%22%3A%22SB%22%7D%2C%7B%22category%22%3A%22defense%22%2C%22key%22%3A%22CS%22%7D%2C%7B%22category%22%3A%22defense%22%2C%22key%22%3A%22SB%25%22%7D%5D&qualifying_stat=%7B%22key%22%3A%22GP%3AP%22%2C%22category%22%3A%22defense%22%7D&game_filter=All
 
-function getStat(playerName, identifier, sheet=statsSheet) {
-  return sheet.players[sheet.players.findIndex(player => player.row_info.player_name.includes(playerName))]?.stats[
-    sheet.players[sheet.players.findIndex(player => player.row_info.player_name.includes(playerName))].stats.findIndex(stat => stat.identifier.key === identifier)
-  ]?.value
-}
-
-function PlayerCard(props) {    
+function PlayerCard(props) {
     // Batting Stats
     const runs = getStat(props.name, 'R');
     const hits = getStat(props.name, 'H');
@@ -44,8 +39,8 @@ function PlayerCard(props) {
     const strikeouts = getStat(props.name, 'SO');
     const walks = getStat(props.name, 'BB');
     const hbp = getStat(props.name, 'HBP');
-    const PIK = getStat(props.name, 'PIK', statsSheetExtra);
     const error = getStat(props.name, 'E', statsSheetFielding);
+    const PIK = getStat(props.name, 'PIK', statsSheetExtra);
     const total_batting = Number(runs) + Number(hits) * 0.5 + Number(singles) + Number(doubles) * 2 + Number(triples) * 3 + Number(homers) * 4 + Number(rbis) + Number(sb) * 2 + Number(cs) * -2 + Number(strikeouts) * -1 + Number(walks) * 0.5 + Number(hbp) * 0.5 + Number(PIK) * -2 + Number(error) * -1;
 
     // Pitching Stats
@@ -286,4 +281,4 @@ function PlayerCard(props) {
     )
   }
 
-export default PlayerCard
+export default PlayerCard;

@@ -9,7 +9,7 @@
         "name": "Frobel",
         "positions": "SS | RP",
         "batting_owners": ["todd", "coughlan"],
-        "pitching_owners": ["berthiaume", ""],
+        "pitching_owners": ["berthiaume", "easterbrook"],
         "primarily_pitcher": false
     }, {
         "name": "Lavigne",
@@ -20,7 +20,7 @@
     }, {
         "name": "Todd",
         "positions": "3B | RP",
-        "batting_owners": ["ellingham", "coughlan"],
+        "batting_owners": ["ellingham", "gray"],
         "pitching_owners": ["gray", "maclean"],
         "primarily_pitcher": false
     }, {
@@ -32,13 +32,13 @@
     }, {
         "name": "Gray",
         "positions": "2B",
-        "batting_owners": ["ellingham", ""],
+        "batting_owners": ["ellingham", "easterbrook"],
         "pitching_owners": [],
         "primarily_pitcher": false
     }, {
         "name": "Brady",
         "positions": "1B",
-        "batting_owners": ["", ""],
+        "batting_owners": ["gray", "coughlan"],
         "pitching_owners": [],
         "primarily_pitcher": false
     }, {
@@ -62,13 +62,13 @@
     }, {
         "name": "Easterbrook",
         "positions": "OF",
-        "batting_owners": ["", ""],
+        "batting_owners": ["maclean", "todd"],
         "pitching_owners": [],
         "primarily_pitcher": false
     }, {
         "name": "Coughlan",
         "positions": "OF",
-        "batting_owners": ["", ""],
+        "batting_owners": ["wideman", "gray"],
         "pitching_owners": [],
         "primarily_pitcher": false
     }, {
@@ -86,25 +86,25 @@
     }, {
         "name": "Avery",
         "positions": "P | OF",
-        "batting_owners": ["", ""],
+        "batting_owners": ["wideman", "ellingham"],
         "pitching_owners": ["easterbrook", "coughlan"],
         "primarily_pitcher": true
     }, {
         "name": "(All Other Relievers)",
         "positions": "RP",
-        "batting_owners": ["wideman", ""],
-        "pitching_owners": [],
+        "batting_owners": [],
+        "pitching_owners": ["wideman", "ellingham"],
         "primarily_pitcher": true
     }, {
         "name": "Postma",
         "positions": "OF",
-        "batting_owners": ["maclean", ""],
+        "batting_owners": ["maclean", "gray"],
         "pitching_owners": [],
         "primarily_pitcher": false
     }, {
         "name": "Berthiaume",
         "positions": "OF",
-        "batting_owners": ["", ""],
+        "batting_owners": ["berthiaume", "todd"],
         "pitching_owners": [],
         "primarily_pitcher": false
     }],
