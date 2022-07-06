@@ -16,7 +16,7 @@ import {
 import { getFantasyOwnerBattingTotals, getFantasyOwnerPitchingTotals, getAllOtherRelieversTotal } from './Stats';
 
 function OwnerCard(props) {
-    let total = 0;
+    let total = 0; 
     getFantasyOwnerBattingTotals(props.name).forEach(player => total += player.points)
     getFantasyOwnerPitchingTotals(props.name).forEach(player => total += player.name === '(All Other Relievers)' ? getAllOtherRelieversTotal() : player.points);
     return (

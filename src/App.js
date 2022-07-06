@@ -12,6 +12,7 @@ import {
 } from '@chakra-ui/react';
 import PlayerCard from './PlayerCard';
 import OwnerCard from './OwnerCard';
+import Dashboard from './Dashboard';
 
 const player_info = require('./player_info.json');
 
@@ -23,14 +24,14 @@ function App() {
     <ChakraProvider theme={theme}>
       <Tabs isFitted variant='enclosed'>
         <TabList mb='1em'>
-          {/* <Tab>Dashboard</Tab> */}
+          <Tab>Dashboard</Tab>
           <Tab>Reaper Stats</Tab>
           <Tab>Fantasy Owner Stats</Tab>
         </TabList>
         <TabPanels>
-          {/* <TabPanel>
-            To-do
-          </TabPanel> */}
+          <TabPanel>
+            <Dashboard />
+          </TabPanel>
           <TabPanel>
           <Select placeholder='Select Player...' onChange={e => setSelectedPlayer(e.target.value)}>
             {
