@@ -20,10 +20,11 @@ import {
 
 import { getStat, getStatTotal } from './Stats'; 
 
-const statsSheetExtra = require('./batting_stats_extra.json');
-const statsSheetFielding = require('./fielding_stats.json');
-const statsSheetPitching = require('./pitching_stats.json');            // https://gc.com/stats/team/62702155c4a63df6dd0f8dea/?stats_requested=%5B%7B%22category%22%3A%22defense%22%2C%22key%22%3A%22outs%22%7D%2C%7B%22category%22%3A%22defense%22%2C%22key%22%3A%22GP%3AP%22%7D%2C%7B%22category%22%3A%22defense%22%2C%22key%22%3A%22GS%22%7D%2C%7B%22category%22%3A%22defense%22%2C%22key%22%3A%22W%22%7D%2C%7B%22category%22%3A%22defense%22%2C%22key%22%3A%22L%22%7D%2C%7B%22category%22%3A%22defense%22%2C%22key%22%3A%22SV%22%7D%2C%7B%22category%22%3A%22defense%22%2C%22key%22%3A%22SVO%22%7D%2C%7B%22category%22%3A%22defense%22%2C%22key%22%3A%22BS%22%7D%2C%7B%22category%22%3A%22defense%22%2C%22key%22%3A%22SV%25%22%7D%2C%7B%22category%22%3A%22defense%22%2C%22key%22%3A%22H%22%7D%2C%7B%22category%22%3A%22defense%22%2C%22key%22%3A%22R%22%7D%2C%7B%22category%22%3A%22defense%22%2C%22key%22%3A%22ER%22%7D%2C%7B%22category%22%3A%22defense%22%2C%22key%22%3A%22BB%22%7D%2C%7B%22category%22%3A%22defense%22%2C%22key%22%3A%22SO%22%7D%2C%7B%22category%22%3A%22defense%22%2C%22key%22%3A%22HBP%22%7D%2C%7B%22category%22%3A%22defense%22%2C%22key%22%3A%22ERA%22%7D%2C%7B%22category%22%3A%22defense%22%2C%22key%22%3A%22WHIP%22%7D%5D&qualifying_stat=%7B%22key%22%3A%22GP%3AP%22%2C%22category%22%3A%22defense%22%7D&game_filter=All
-const statsSheetPitchingExtra = require('./pitching_stats_extra.json'); // https://gc.com/stats/team/62702155c4a63df6dd0f8dea/?stats_requested=%5B%7B%22category%22%3A%22defense%22%2C%22key%22%3A%22outs%22%7D%2C%7B%22category%22%3A%22defense%22%2C%22key%22%3A%22LOB%22%7D%2C%7B%22category%22%3A%22defense%22%2C%22key%22%3A%22BK%22%7D%2C%7B%22category%22%3A%22defense%22%2C%22key%22%3A%22PIK%22%7D%2C%7B%22category%22%3A%22defense%22%2C%22key%22%3A%22SB%22%7D%2C%7B%22category%22%3A%22defense%22%2C%22key%22%3A%22CS%22%7D%2C%7B%22category%22%3A%22defense%22%2C%22key%22%3A%22SB%25%22%7D%5D&qualifying_stat=%7B%22key%22%3A%22GP%3AP%22%2C%22category%22%3A%22defense%22%7D&game_filter=All
+const statsSheet = {'base': require('./statistics/batting_stats.json'), 'before': require('./statistics/batting_stats_less_one.json')};
+const statsSheetExtra = {'base': require('./statistics/batting_stats_extra.json'), 'before': require('./statistics/batting_stats_extra_less_one.json')};
+const statsSheetFielding = {'base': require('./statistics/fielding_stats.json'), 'before': require('./statistics/fielding_stats_less_one.json')};
+const statsSheetPitching = {'base': require('./statistics/pitching_stats.json'), 'before': require('./statistics/pitching_stats_less_one.json')};
+const statsSheetPitchingExtra = {'base': require('./statistics/pitching_stats_extra.json'), 'before': require('./statistics/pitching_stats_extra_less_one.json')};
 
 function PlayerCard(props) {
     let getStatFunction = getStat;
@@ -33,19 +34,33 @@ function PlayerCard(props) {
     }
     // Batting Stats
     const runs = getStatFunction(props.name, 'R');
+    const runs_diff = runs - getStatFunction(props.name, 'R', statsSheet, 'before')
     const hits = getStatFunction(props.name, 'H');
+    const hits_diff = hits - getStatFunction(props.name, 'H', statsSheet, 'before')
     const singles = getStatFunction(props.name, '1B');
+    const singles_diff = singles - getStatFunction(props.name, '1B', statsSheet, 'before')
     const doubles = getStatFunction(props.name, '2B');
+    const doubles_diff = doubles - getStatFunction(props.name, '2B', statsSheet, 'before')
     const triples = getStatFunction(props.name, '3B');
+    const triples_diff = triples - getStatFunction(props.name, '3B', statsSheet, 'before')
     const homers = getStatFunction(props.name, 'HR');
+    const homers_diff = homers - getStatFunction(props.name, 'HR', statsSheet, 'before')
     const rbis = getStatFunction(props.name, 'RBI');
+    const rbis_diff = rbis - getStatFunction(props.name, 'RBI', statsSheet, 'before')
     const sb = getStatFunction(props.name, 'SB', statsSheetExtra);
+    const sb_diff = sb - getStatFunction(props.name, 'SB', statsSheetExtra, 'before')
     const cs = getStatFunction(props.name, 'CS', statsSheetExtra);
+    const cs_diff = cs - getStatFunction(props.name, 'CS', statsSheetExtra, 'before')
     const strikeouts = getStatFunction(props.name, 'SO');
+    const strikeouts_diff = strikeouts - getStatFunction(props.name, 'SO', statsSheet, 'before')
     const walks = getStatFunction(props.name, 'BB');
+    const walks_diff = walks - getStatFunction(props.name, 'BB', statsSheet, 'before')
     const hbp = getStatFunction(props.name, 'HBP');
+    const hbp_diff = hbp - getStatFunction(props.name, 'HBP', statsSheet, 'before')
     const error = getStatFunction(props.name, 'E', statsSheetFielding);
+    const error_diff = error - getStatFunction(props.name, 'E', statsSheetFielding, 'before')
     const PIK = getStatFunction(props.name, 'PIK', statsSheetExtra);
+    const PIK_diff = PIK - getStatFunction(props.name, 'PIK', statsSheetExtra, 'before')
     const total_batting = Number(runs) + Number(hits) * 0.5 + Number(singles) + Number(doubles) * 2 + Number(triples) * 3 + Number(homers) * 4 + Number(rbis) + Number(sb) * 2 + Number(cs) * -2 + Number(strikeouts) * -1 + Number(walks) * 0.5 + Number(hbp) * 0.5 + Number(PIK) * -2 + Number(error) * -1;
 
     // Pitching Stats
@@ -61,6 +76,18 @@ function PlayerCard(props) {
     let outs = getStatFunction(props.name, 'outs', statsSheetPitching);
     let PIK_pitcher = getStatFunction(props.name, 'PIK', statsSheetPitchingExtra);
     let no_hitters = 0; // not tracked by gamechanger...
+
+    let wins_before = getStatFunction(props.name, 'W', statsSheetPitching, 'before')
+    let losses_before = getStatFunction(props.name, 'L', statsSheetPitching, 'before')
+    let saves_before =  getStatFunction(props.name, 'SV', statsSheetPitching, 'before')
+    let blown_saves_before = getStatFunction(props.name, 'BS', statsSheetPitching, 'before')
+    let hits_pitcher_before = getStatFunction(props.name, 'H', statsSheetPitching, 'before')
+    let strikeouts_pitcher_before = getStatFunction(props.name, 'SO', statsSheetPitching, 'before')
+    let walks_pitcher_before = getStatFunction(props.name, 'BB', statsSheetPitching, 'before')
+    let hbp_pitcher_before = getStatFunction(props.name, 'HBP', statsSheetPitching, 'before')
+    let earned_runs_before = getStatFunction(props.name, 'ER', statsSheetPitching, 'before')
+    let outs_before = getStatFunction(props.name, 'outs', statsSheetPitching, 'before')
+    let PIK_pitcher_before = getStatFunction(props.name, 'PIK', statsSheetPitchingExtra, 'before')
 
     if (allOtherRelievers) {
       wins -= (Number(getStat('Lavigne', 'W', statsSheetPitching)) + Number(getStat('Ellingham', 'W', statsSheetPitching)) + Number(getStat('Avery', 'W', statsSheetPitching)) + Number(getStat('Dominic Murray', 'W', statsSheetPitching)) + Number(getStat('Jerome Murray', 'W', statsSheetPitching)) + Number(getStat('Todd', 'W', statsSheetPitching)) + Number(getStat('Frobel', 'W', statsSheetPitching)));
@@ -84,7 +111,42 @@ function PlayerCard(props) {
       outs -= (Number(getStat('Lavigne', 'outs', statsSheetPitching)) + Number(getStat('Ellingham', 'outs', statsSheetPitching)) + Number(getStat('Avery', 'outs', statsSheetPitching)) + Number(getStat('Dominic Murray', 'outs', statsSheetPitching)) + Number(getStat('Jerome Murray', 'outs', statsSheetPitching)) + Number(getStat('Todd', 'outs', statsSheetPitching)) + Number(getStat('Frobel', 'outs', statsSheetPitching)));
 
       PIK_pitcher -= (Number(getStat('Lavigne', 'PIK', statsSheetPitchingExtra)) + Number(getStat('Ellingham', 'PIK', statsSheetPitchingExtra)) + Number(getStat('Avery', 'PIK', statsSheetPitchingExtra)) + Number(getStat('Dominic Murray', 'PIK', statsSheetPitchingExtra)) + Number(getStat('Jerome Murray', 'PIK', statsSheetPitchingExtra)) + Number(getStat('Todd', 'PIK', statsSheetPitchingExtra)) + Number(getStat('Frobel', 'PIK', statsSheetPitchingExtra)));
+
+      wins_before -= (Number(getStat('Lavigne', 'W', statsSheetPitching, 'before')) + Number(getStat('Ellingham', 'W', statsSheetPitching, 'before')) + Number(getStat('Avery', 'W', statsSheetPitching, 'before')) + Number(getStat('Dominic Murray', 'W', statsSheetPitching, 'before')) + Number(getStat('Jerome Murray', 'W', statsSheetPitching, 'before')) + Number(getStat('Todd', 'W', statsSheetPitching, 'before')) + Number(getStat('Frobel', 'W', statsSheetPitching, 'before')));
+
+      losses_before -= (Number(getStat('Lavigne', 'L', statsSheetPitching, 'before')) + Number(getStat('Ellingham', 'L', statsSheetPitching, 'before')) + Number(getStat('Avery', 'L', statsSheetPitching, 'before')) + Number(getStat('Dominic Murray', 'L', statsSheetPitching, 'before')) + Number(getStat('Jerome Murray', 'L', statsSheetPitching, 'before')) + Number(getStat('Todd', 'L', statsSheetPitching, 'before')) + Number(getStat('Frobel', 'L', statsSheetPitching, 'before')));
+
+      saves_before -= (Number(getStat('Lavigne', 'SV', statsSheetPitching, 'before')) + Number(getStat('Ellingham', 'SV', statsSheetPitching, 'before')) + Number(getStat('Avery', 'SV', statsSheetPitching, 'before')) + Number(getStat('Dominic Murray', 'SV', statsSheetPitching, 'before')) + Number(getStat('Jerome Murray', 'SV', statsSheetPitching, 'before')) + Number(getStat('Todd', 'SV', statsSheetPitching, 'before')) + Number(getStat('Frobel', 'SV', statsSheetPitching, 'before')));
+
+      blown_saves_before -= (Number(getStat('Lavigne', 'BS', statsSheetPitching, 'before')) + Number(getStat('Ellingham', 'BS', statsSheetPitching, 'before')) + Number(getStat('Avery', 'BS', statsSheetPitching, 'before')) + Number(getStat('Dominic Murray', 'BS', statsSheetPitching, 'before')) + Number(getStat('Jerome Murray', 'BS', statsSheetPitching, 'before')) + Number(getStat('Todd', 'BS', statsSheetPitching, 'before')) + Number(getStat('Frobel', 'BS', statsSheetPitching, 'before')));
+
+      hits_pitcher_before -= (Number(getStat('Lavigne', 'H', statsSheetPitching, 'before')) + Number(getStat('Ellingham', 'H', statsSheetPitching, 'before')) + Number(getStat('Avery', 'H', statsSheetPitching, 'before')) + Number(getStat('Dominic Murray', 'H', statsSheetPitching, 'before')) + Number(getStat('Jerome Murray', 'H', statsSheetPitching, 'before')) + Number(getStat('Todd', 'H', statsSheetPitching, 'before')) + Number(getStat('Frobel', 'H', statsSheetPitching, 'before')));
+
+      strikeouts_pitcher_before -= (Number(getStat('Lavigne', 'SO', statsSheetPitching, 'before')) + Number(getStat('Ellingham', 'SO', statsSheetPitching, 'before')) + Number(getStat('Avery', 'SO', statsSheetPitching, 'before')) + Number(getStat('Dominic Murray', 'SO', statsSheetPitching, 'before')) + Number(getStat('Jerome Murray', 'SO', statsSheetPitching, 'before')) + Number(getStat('Todd', 'SO', statsSheetPitching, 'before')) + Number(getStat('Frobel', 'SO', statsSheetPitching, 'before')));
+
+      walks_pitcher_before -= (Number(getStat('Lavigne', 'BB', statsSheetPitching, 'before')) + Number(getStat('Ellingham', 'BB', statsSheetPitching, 'before')) + Number(getStat('Avery', 'BB', statsSheetPitching, 'before')) + Number(getStat('Dominic Murray', 'BB', statsSheetPitching, 'before')) + Number(getStat('Jerome Murray', 'BB', statsSheetPitching, 'before')) + Number(getStat('Todd', 'BB', statsSheetPitching, 'before')) + Number(getStat('Frobel', 'BB', statsSheetPitching, 'before')));
+
+      hbp_pitcher_before -= (Number(getStat('Lavigne', 'HBP', statsSheetPitching, 'before')) + Number(getStat('Ellingham', 'HBP', statsSheetPitching, 'before')) + Number(getStat('Avery', 'HBP', statsSheetPitching, 'before')) + Number(getStat('Dominic Murray', 'HBP', statsSheetPitching, 'before')) + Number(getStat('Jerome Murray', 'HBP', statsSheetPitching, 'before')) + Number(getStat('Todd', 'HBP', statsSheetPitching, 'before')) + Number(getStat('Frobel', 'HBP', statsSheetPitching, 'before')));
+
+      earned_runs_before -= (Number(getStat('Lavigne', 'ER', statsSheetPitching, 'before')) + Number(getStat('Ellingham', 'ER', statsSheetPitching, 'before')) + Number(getStat('Avery', 'ER', statsSheetPitching, 'before')) + Number(getStat('Dominic Murray', 'ER', statsSheetPitching, 'before')) + Number(getStat('Jerome Murray', 'ER', statsSheetPitching, 'before')) + Number(getStat('Todd', 'ER', statsSheetPitching, 'before')) + Number(getStat('Frobel', 'ER', statsSheetPitching, 'before')));
+
+      outs_before -= (Number(getStat('Lavigne', 'outs', statsSheetPitching, 'before')) + Number(getStat('Ellingham', 'outs', statsSheetPitching, 'before')) + Number(getStat('Avery', 'outs', statsSheetPitching, 'before')) + Number(getStat('Dominic Murray', 'outs', statsSheetPitching, 'before')) + Number(getStat('Jerome Murray', 'outs', statsSheetPitching, 'before')) + Number(getStat('Todd', 'outs', statsSheetPitching, 'before')) + Number(getStat('Frobel', 'outs', statsSheetPitching, 'before')));
+
+      PIK_pitcher_before -= (Number(getStat('Lavigne', 'PIK', statsSheetPitchingExtra, 'before')) + Number(getStat('Ellingham', 'PIK', statsSheetPitchingExtra, 'before')) + Number(getStat('Avery', 'PIK', statsSheetPitchingExtra, 'before')) + Number(getStat('Dominic Murray', 'PIK', statsSheetPitchingExtra, 'before')) + Number(getStat('Jerome Murray', 'PIK', statsSheetPitchingExtra, 'before')) + Number(getStat('Todd', 'PIK', statsSheetPitchingExtra, 'before')) + Number(getStat('Frobel', 'PIK', statsSheetPitchingExtra, 'before')));
     }
+
+    let wins_diff = wins - wins_before;
+    let losses_diff = losses - losses_before;
+    let saves_diff = saves - saves_before;
+    let blown_saves_diff = blown_saves - blown_saves_before;
+    let hits_pitcher_diff = hits_pitcher - hits_pitcher_before;
+    let strikeouts_pitcher_diff = strikeouts_pitcher - strikeouts_pitcher_before;
+    let walks_pitcher_diff = walks_pitcher - walks_pitcher_before;
+    let hbp_pitcher_diff = hbp_pitcher - hbp_pitcher_before;
+    let earned_runs_diff = earned_runs - earned_runs_before;
+    let outs_diff = outs - outs_before;
+    let PIK_pitcher_diff = PIK_pitcher - PIK_pitcher_before;
+    let no_hitters_diff = 0; // not tracked by gamechanger...
 
     const total_pitching = Number(wins)*5 + Number(losses)*4 + Number(saves)*7 + Number(blown_saves)*-7 + Number(hits_pitcher)*-0.5 + Number(strikeouts_pitcher) + Number(walks_pitcher)*-1 + Number(hbp_pitcher)*-1 + Number(earned_runs)*-1 + Number(outs)*0.5 + Number(PIK_pitcher)*2 + Number(no_hitters)*5;
     
@@ -99,84 +161,100 @@ function PlayerCard(props) {
           <Tr>
             <Th>Category</Th>
             <Th>Total</Th>
+            <Th>Chg</Th>
             <Th>Fantasy Pts</Th>
           </Tr>
         </Thead>
         <Tbody>
           <Tr>
             <Td>R (1)</Td>
-            <Td isNumeric>{runs}</Td>
-            <Td isNumeric>{runs * 1}</Td>
+            <Td isNumeric><Center>{runs}</Center></Td>
+            <Td isNumeric><Center style={runs_diff > 0 ? {color: 'green'} : (runs_diff < 0 ? {color: 'red'} : {color: 'black'})}>{runs_diff > 0 ? '+' : ''}{runs_diff}</Center></Td>
+            <Td isNumeric><Center>{runs * 1}</Center></Td>
           </Tr>
           <Tr>
             <Td>H (0.5)</Td>
-            <Td isNumeric>{hits}</Td>
-            <Td isNumeric>{hits * 0.5}</Td>
+            <Td isNumeric><Center>{hits}</Center></Td>
+            <Td isNumeric><Center style={hits_diff > 0 ? {color: 'green'} : (hits_diff < 0 ? {color: 'red'} : {color: 'black'})}>{hits_diff > 0 ? '+' : ''}{hits_diff}</Center></Td>
+            <Td isNumeric><Center>{hits * 0.5}</Center></Td>
           </Tr>
           <Tr>
             <Td>1B (1)</Td>
-            <Td isNumeric>{singles}</Td>
-            <Td isNumeric>{singles * 1}</Td>
+            <Td isNumeric><Center>{singles}</Center></Td>
+            <Td isNumeric><Center style={singles_diff > 0 ? {color: 'green'} : (singles_diff < 0 ? {color: 'red'} : {color: 'black'})}>{singles_diff > 0 ? '+' : ''}{singles_diff}</Center></Td>
+            <Td isNumeric><Center>{singles * 1}</Center></Td>
           </Tr>
           <Tr>
             <Td>2B (2)</Td>
-            <Td isNumeric>{doubles}</Td>
-            <Td isNumeric>{doubles * 2}</Td>
+            <Td isNumeric><Center>{doubles}</Center></Td>
+            <Td isNumeric><Center style={doubles_diff > 0 ? {color: 'green'} : (doubles_diff < 0 ? {color: 'red'} : {color: 'black'})}>{doubles_diff > 0 ? '+' : ''}{doubles_diff}</Center></Td>
+            <Td isNumeric><Center>{doubles * 2}</Center></Td>
           </Tr>
           <Tr>
             <Td>3B (3)</Td>
-            <Td isNumeric>{triples}</Td>
-            <Td isNumeric>{triples * 3}</Td>
+            <Td isNumeric><Center>{triples}</Center></Td>
+            <Td isNumeric><Center style={triples_diff > 0 ? {color: 'green'} : (triples_diff < 0 ? {color: 'red'} : {color: 'black'})}>{triples_diff > 0 ? '+' : ''}{triples_diff}</Center></Td>
+            <Td isNumeric><Center>{triples * 3}</Center></Td>
           </Tr>
           <Tr>
             <Td>HR (4)</Td>
-            <Td isNumeric>{homers}</Td>
-            <Td isNumeric>{homers * 4}</Td>
+            <Td isNumeric><Center>{homers}</Center></Td>
+            <Td isNumeric><Center style={homers_diff > 0 ? {color: 'green'} : (homers_diff < 0 ? {color: 'red'} : {color: 'black'})}>{homers_diff > 0 ? '+' : ''}{homers_diff}</Center></Td>
+            <Td isNumeric><Center>{homers * 4}</Center></Td>
           </Tr>
           <Tr>
             <Td>RBI (1)</Td>
-            <Td isNumeric>{rbis}</Td>
-            <Td isNumeric>{rbis * 1}</Td>
+            <Td isNumeric><Center>{rbis}</Center></Td>
+            <Td isNumeric><Center style={rbis_diff > 0 ? {color: 'green'} : (rbis_diff < 0 ? {color: 'red'} : {color: 'black'})}>{rbis_diff > 0 ? '+' : ''}{rbis_diff}</Center></Td>
+            <Td isNumeric><Center>{rbis * 1}</Center></Td>
           </Tr>
           <Tr>
             <Td>SB (2)</Td>
-            <Td isNumeric>{sb}</Td>
-            <Td isNumeric>{sb * 2}</Td>
+            <Td isNumeric><Center>{sb}</Center></Td>
+            <Td isNumeric><Center style={sb_diff > 0 ? {color: 'green'} : (sb_diff < 0 ? {color: 'red'} : {color: 'black'})}>{sb_diff > 0 ? '+' : ''}{sb_diff}</Center></Td>
+            <Td isNumeric><Center>{sb * 2}</Center></Td>
           </Tr>
           <Tr>
             <Td>CS (-2)</Td>
-            <Td isNumeric>{cs}</Td>
-            <Td isNumeric>{cs * -2}</Td>
+            <Td isNumeric><Center>{cs}</Center></Td>
+            <Td isNumeric><Center style={cs_diff > 0 ? {color: 'red'} : (cs_diff < 0 ? {color: 'green'} : {color: 'black'})}>{cs_diff > 0 ? '+' : ''}{cs_diff}</Center></Td>
+            <Td isNumeric><Center>{cs * -2}</Center></Td>
           </Tr>
           <Tr>
             <Td>K (-1)</Td>
-            <Td isNumeric>{strikeouts}</Td>
-            <Td isNumeric>{strikeouts * -1}</Td>
+            <Td isNumeric><Center>{strikeouts}</Center></Td>
+            <Td isNumeric><Center style={strikeouts_diff > 0 ? {color: 'red'} : (strikeouts_diff < 0 ? {color: 'green'} : {color: 'black'})}>{strikeouts_diff > 0 ? '+' : ''}{strikeouts_diff}</Center></Td>
+            <Td isNumeric><Center>{strikeouts * -1}</Center></Td>
           </Tr>
           <Tr>
             <Td>BB (0.5)</Td>
-            <Td isNumeric>{walks}</Td>
-            <Td isNumeric>{walks * 0.5}</Td>
+            <Td isNumeric><Center>{walks}</Center></Td>
+            <Td isNumeric><Center style={walks_diff > 0 ? {color: 'green'} : (walks_diff < 0 ? {color: 'red'} : {color: 'black'})}>{walks_diff > 0 ? '+' : ''}{walks_diff}</Center></Td>
+            <Td isNumeric><Center>{walks * 0.5}</Center></Td>
           </Tr>
           <Tr>
             <Td>HBP (0.5)</Td>
-            <Td isNumeric>{hbp}</Td>
-            <Td isNumeric>{hbp * 0.5}</Td>
+            <Td isNumeric><Center>{hbp}</Center></Td>
+            <Td isNumeric><Center style={hbp_diff > 0 ? {color: 'green'} : (hbp_diff < 0 ? {color: 'red'} : {color: 'black'})}>{hbp_diff > 0 ? '+' : ''}{hbp_diff}</Center></Td>
+            <Td isNumeric><Center>{hbp * 0.5}</Center></Td>
           </Tr>
           <Tr>
             <Td>Fielding Error (-1)</Td>
-            <Td isNumeric>{error}</Td>
-            <Td isNumeric>{error * -1}</Td>
+            <Td isNumeric><Center>{error}</Center></Td>
+            <Td isNumeric><Center style={error_diff > 0 ? {color: 'red'} : (error_diff < 0 ? {color: 'green'} : {color: 'black'})}>{error_diff > 0 ? '+' : ''}{error_diff}</Center></Td>
+            <Td isNumeric><Center>{error * -1}</Center></Td>
           </Tr>
           <Tr>
             <Td>PIK (-2)</Td>
-            <Td isNumeric>{PIK}</Td>
-            <Td isNumeric>{PIK * -2}</Td>
+            <Td isNumeric><Center>{PIK}</Center></Td>
+            <Td isNumeric><Center style={PIK_diff > 0 ? {color: 'red'} : (PIK_diff < 0 ? {color: 'green'} : {color: 'black'})}>{PIK_diff > 0 ? '+' : ''}{PIK_diff}</Center></Td>
+            <Td isNumeric><Center>{PIK * -2}</Center></Td>
           </Tr>
           <Tr>
             <Td>Total</Td>
             <Td isNumeric></Td>
-            <Td isNumeric>{total_batting}</Td>
+            <Td isNumeric></Td>
+            <Td isNumeric><Center>{total_batting}</Center></Td>
           </Tr>
         </Tbody>
       </Table>
@@ -189,74 +267,88 @@ function PlayerCard(props) {
           <Tr>
             <Th>Category</Th>
             <Th>Total</Th>
+            <Th>Chg</Th>
             <Th>Fantasy Pts</Th>
           </Tr>
         </Thead>
         <Tbody>
           <Tr>
             <Td>W (5)</Td>
-            <Td isNumeric>{wins}</Td>
-            <Td isNumeric>{wins * 5}</Td>
+            <Td isNumeric><Center>{wins}</Center></Td>
+            <Td isNumeric><Center style={wins_diff > 0 ? {color: 'green'} : (wins_diff < 0 ? {color: 'red'} : {color: 'black'})}>{wins_diff > 0 ? '+' : ''}{wins_diff}</Center></Td>
+            <Td isNumeric><Center>{wins * 5}</Center></Td>
           </Tr>
           <Tr>
             <Td>L (4)</Td>
-            <Td isNumeric>{losses}</Td>
-            <Td isNumeric>{losses * 4}</Td>
+            <Td isNumeric><Center>{losses}</Center></Td>
+            <Td isNumeric><Center style={losses_diff > 0 ? {color: 'green'} : (losses_diff < 0 ? {color: 'red'} : {color: 'black'})}>{losses_diff > 0 ? '+' : ''}{losses_diff}</Center></Td>
+            <Td isNumeric><Center>{losses * 4}</Center></Td>
           </Tr>
           <Tr>
             <Td>SV (7)</Td>
-            <Td isNumeric>{saves}</Td>
-            <Td isNumeric>{saves * 7}</Td>
+            <Td isNumeric><Center>{saves}</Center></Td>
+            <Td isNumeric><Center style={saves_diff > 0 ? {color: 'green'} : (saves_diff < 0 ? {color: 'red'} : {color: 'black'})}>{saves_diff > 0 ? '+' : ''}{saves_diff}</Center></Td>
+            <Td isNumeric><Center>{saves * 7}</Center></Td>
           </Tr>
           <Tr>
             <Td>BS (-7)</Td>
-            <Td isNumeric>{blown_saves}</Td>
-            <Td isNumeric>{blown_saves * -7}</Td>
+            <Td isNumeric><Center>{blown_saves}</Center></Td>
+            <Td isNumeric><Center style={blown_saves_diff > 0 ? {color: 'red'} : (blown_saves_diff < 0 ? {color: 'green'} : {color: 'black'})}>{blown_saves_diff > 0 ? '+' : ''}{blown_saves_diff}</Center></Td>
+            <Td isNumeric><Center>{blown_saves * -7}</Center></Td>
           </Tr>
           <Tr>
             <Td>H (-0.5)</Td>
-            <Td isNumeric>{hits_pitcher}</Td>
-            <Td isNumeric>{hits_pitcher * -0.5}</Td>
+            <Td isNumeric><Center>{hits_pitcher}</Center></Td>
+            <Td isNumeric><Center style={hits_pitcher_diff > 0 ? {color: 'red'} : (hits_pitcher_diff < 0 ? {color: 'green'} : {color: 'black'})}>{hits_pitcher_diff > 0 ? '+' : ''}{hits_pitcher_diff}</Center></Td>
+            <Td isNumeric><Center>{hits_pitcher * -0.5}</Center></Td>
           </Tr>
           <Tr>
             <Td>SO (1)</Td>
-            <Td isNumeric>{strikeouts_pitcher}</Td>
-            <Td isNumeric>{strikeouts_pitcher * 1}</Td>
+            <Td isNumeric><Center>{strikeouts_pitcher}</Center></Td>
+            <Td isNumeric><Center style={strikeouts_pitcher_diff > 0 ? {color: 'green'} : (strikeouts_pitcher_diff < 0 ? {color: 'red'} : {color: 'black'})}>{strikeouts_pitcher_diff > 0 ? '+' : ''}{strikeouts_pitcher_diff}</Center></Td>
+            <Td isNumeric><Center>{strikeouts_pitcher * 1}</Center></Td>
           </Tr>
           <Tr>
             <Td>BB (-1)</Td>
-            <Td isNumeric>{walks_pitcher}</Td>
-            <Td isNumeric>{walks_pitcher * -1}</Td>
+            <Td isNumeric><Center>{walks_pitcher}</Center></Td>
+            <Td isNumeric><Center style={walks_pitcher_diff > 0 ? {color: 'red'} : (walks_pitcher_diff < 0 ? {color: 'green'} : {color: 'black'})}>{walks_pitcher_diff > 0 ? '+' : ''}{walks_pitcher_diff}</Center></Td>
+            <Td isNumeric><Center>{walks_pitcher * -1}</Center></Td>
           </Tr>
           <Tr>
             <Td>HBP (-1)</Td>
-            <Td isNumeric>{hbp_pitcher}</Td>
-            <Td isNumeric>{hbp_pitcher * -1}</Td>
+            <Td isNumeric><Center>{hbp_pitcher}</Center></Td>
+            <Td isNumeric><Center style={hbp_pitcher_diff > 0 ? {color: 'red'} : (hbp_pitcher_diff < 0 ? {color: 'green'} : {color: 'black'})}>{hbp_pitcher_diff > 0 ? '+' : ''}{hbp_pitcher_diff}</Center></Td>
+            <Td isNumeric><Center>{hbp_pitcher * -1}</Center></Td>
           </Tr>
           <Tr>
             <Td>ER (-1)</Td>
-            <Td isNumeric>{earned_runs}</Td>
-            <Td isNumeric>{earned_runs * -1}</Td>
+            <Td isNumeric><Center>{earned_runs}</Center></Td>
+            <Td isNumeric><Center style={earned_runs_diff > 0 ? {color: 'red'} : (earned_runs_diff < 0 ? {color: 'green'} : {color: 'black'})}>{earned_runs_diff > 0 ? '+' : ''}{earned_runs_diff}</Center></Td>
+            <Td isNumeric><Center>{earned_runs * -1}</Center></Td>
           </Tr>
           <Tr>
             <Td>Outs (0.5)</Td>
-            <Td isNumeric>{outs}</Td>
-            <Td isNumeric>{outs * 0.5}</Td>
+            <Td isNumeric><Center>{outs}</Center></Td>
+            <Td isNumeric><Center style={outs_diff > 0 ? {color: 'green'} : (outs_diff < 0 ? {color: 'red'} : {color: 'black'})}>{outs_diff > 0 ? '+' : ''}{outs_diff}</Center></Td>
+            <Td isNumeric><Center>{outs * 0.5}</Center></Td>
           </Tr>
           <Tr>
             <Td>PIK (2)</Td>
-            <Td isNumeric>{PIK_pitcher}</Td>
-            <Td isNumeric>{PIK_pitcher * 2}</Td>
+            <Td isNumeric><Center>{PIK_pitcher}</Center></Td>
+            <Td isNumeric><Center style={PIK_pitcher_diff > 0 ? {color: 'green'} : (PIK_pitcher_diff < 0 ? {color: 'red'} : {color: 'black'})}>{PIK_pitcher_diff > 0 ? '+' : ''}{PIK_pitcher_diff}</Center></Td>
+            <Td isNumeric><Center>{PIK_pitcher * 2}</Center></Td>
           </Tr>
           <Tr>
-            <Td>No Hitters (5) [not tracked here]</Td>
-            <Td isNumeric>{no_hitters}</Td>
-            <Td isNumeric>{no_hitters * 5}</Td>
+            <Td>No Hitters (5)</Td>
+            <Td isNumeric><Center>{no_hitters}</Center></Td>
+            <Td isNumeric><Center style={no_hitters_diff > 0 ? {color: 'green'} : (no_hitters_diff < 0 ? {color: 'red'} : {color: 'black'})}>{no_hitters_diff > 0 ? '+' : ''}{no_hitters_diff}</Center></Td>
+            <Td isNumeric><Center>{no_hitters * 5}</Center></Td>
           </Tr>
           <Tr>
             <Td>Total</Td>
             <Td isNumeric></Td>
-            <Td isNumeric>{total_pitching}</Td>
+            <Td isNumeric></Td>
+            <Td isNumeric><Center>{total_pitching}</Center></Td>
           </Tr>
         </Tbody>
       </Table>

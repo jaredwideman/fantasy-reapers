@@ -14,7 +14,7 @@ import PlayerCard from './PlayerCard';
 import OwnerCard from './OwnerCard';
 import Dashboard from './Dashboard';
 
-const player_info = require('./player_info.json');
+const player_info = require('./statistics/player_info.json');
 
 function App() {
   const [selectedPlayer, setSelectedPlayer] = useState("");

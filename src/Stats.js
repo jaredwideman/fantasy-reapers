@@ -1,11 +1,12 @@
-const statsSheet = require('./batting_stats.json');
-const statsSheetExtra = require('./batting_stats_extra.json');
-const statsSheetFielding = require('./fielding_stats.json');
-const statsSheetPitching = require('./pitching_stats.json');
-const statsSheetPitchingExtra = require('./pitching_stats_extra.json');
-const player_info = require('./player_info.json');
+const statsSheet = {'base': require('./statistics/batting_stats.json'), 'before': require('./statistics/batting_stats_less_one.json')};
+const statsSheetExtra = {'base': require('./statistics/batting_stats_extra.json'), 'before': require('./statistics/batting_stats_extra_less_one.json')};
+const statsSheetFielding = {'base': require('./statistics/fielding_stats.json'), 'before': require('./statistics/fielding_stats_less_one.json')};
+const statsSheetPitching = {'base': require('./statistics/pitching_stats.json'), 'before': require('./statistics/pitching_stats_less_one.json')};
+const statsSheetPitchingExtra = {'base': require('./statistics/pitching_stats_extra.json'), 'before': require('./statistics/pitching_stats_extra_less_one.json')};
+const player_info = require('./statistics/player_info.json');
 
-function getPlayerBattingTotal(name) {
+
+function getPlayerBattingTotal(name, type='base') {
     let total = 0;
     [{
         'stat': 'R',
@@ -64,12 +65,12 @@ function getPlayerBattingTotal(name) {
         'multiplier': -2,
         'sheet': statsSheetExtra
     }].forEach(stat_obj => {
-        total += Number(getStat(name, stat_obj.stat, stat_obj.sheet)) * stat_obj.multiplier;
+        total += Number(getStat(name, stat_obj.stat, stat_obj.sheet, type)) * stat_obj.multiplier;
     });
     return total; 
 }
 
-function getPlayerPitchingTotal(name) {
+function getPlayerPitchingTotal(name, type='base') {
     let total = 0;
     [{
         'stat': 'W',
@@ -116,13 +117,13 @@ function getPlayerPitchingTotal(name) {
         'multiplier': 2,
         'sheet': statsSheetPitchingExtra
     }].forEach(stat_obj => {
-        total += Number(getStat(name, stat_obj.stat, stat_obj.sheet)) * stat_obj.multiplier;
+        total += Number(getStat(name, stat_obj.stat, stat_obj.sheet, type)) * stat_obj.multiplier;
     });
     return total; 
 }
 
-export function getAllOtherRelieversTotal() {
-    const mains = getPlayerPitchingTotal('Lavigne') + getPlayerPitchingTotal('Ellingham') + getPlayerPitchingTotal('Avery') + getPlayerPitchingTotal('Dominic Murray') + getPlayerPitchingTotal('Jerome Murray') + getPlayerPitchingTotal('Todd') + getPlayerPitchingTotal('Frobel');
+export function getAllOtherRelieversTotal(type='base') {
+    const mains = getPlayerPitchingTotal('Lavigne', type) + getPlayerPitchingTotal('Ellingham', type) + getPlayerPitchingTotal('Avery', type) + getPlayerPitchingTotal('Dominic Murray', type) + getPlayerPitchingTotal('Jerome Murray', type) + getPlayerPitchingTotal('Todd', type) + getPlayerPitchingTotal('Frobel', type);
 
     let total = 0;
     [{
@@ -170,12 +171,12 @@ export function getAllOtherRelieversTotal() {
         'multiplier': 2,
         'sheet': statsSheetPitchingExtra
     }].forEach(stat_obj => {
-        total += Number(getStatTotal(null, stat_obj.stat, stat_obj.sheet)) * stat_obj.multiplier;
+        total += Number(getStatTotal(null, stat_obj.stat, stat_obj.sheet, type)) * stat_obj.multiplier;
     });
     return total - mains; 
 }
 
-export function getFantasyOwnerBattingTotals(owner_name) {
+export function getFantasyOwnerBattingTotals(owner_name, type='base') {
     const owners_batters = player_info.players.filter(player => {
         return player.batting_owners.includes(owner_name);
     });
@@ -183,13 +184,13 @@ export function getFantasyOwnerBattingTotals(owner_name) {
     const ret = [];
 
     owners_batters.forEach(batter => {
-        ret.push({'name': batter.name, 'points': getPlayerBattingTotal(batter.name)});
+        ret.push({'name': batter.name, 'points': getPlayerBattingTotal(batter.name, type)});
     });
 
     return ret;
 }
 
-export function getFantasyOwnerPitchingTotals(owner_name) {
+export function getFantasyOwnerPitchingTotals(owner_name, type='base') {
     const owners_pitchers = player_info.players.filter(player => {
         return player.pitching_owners.includes(owner_name);
     });
@@ -197,18 +198,18 @@ export function getFantasyOwnerPitchingTotals(owner_name) {
     const ret = [];
 
     owners_pitchers.forEach(batter => {
-        ret.push({'name': batter.name, 'points': getPlayerPitchingTotal(batter.name)});
+        ret.push({'name': batter.name, 'points': getPlayerPitchingTotal(batter.name, type)});
     });
 
     return ret;
 }
 
-export function getStat(playerName, identifier, sheet=statsSheet) {
-    return sheet.players[sheet.players.findIndex(player => player.row_info.player_name.includes(playerName))]?.stats[
-        sheet.players[sheet.players.findIndex(player => player.row_info.player_name.includes(playerName))].stats.findIndex(stat => stat.identifier.key === identifier)
+export function getStat(playerName, identifier, sheet=statsSheet, type='base') {
+    return sheet[type].players[sheet[type].players.findIndex(player => player.row_info.player_name.includes(playerName))]?.stats[
+        sheet[type].players[sheet[type].players.findIndex(player => player.row_info.player_name.includes(playerName))].stats.findIndex(stat => stat.identifier.key === identifier)
     ]?.value
 }
 
-export function getStatTotal(playerName, identifier, sheet=statsSheet) {
-    return sheet.totals[0]?.stats[sheet.totals[0].stats.findIndex(stat => stat.identifier.key === identifier)]?.value
-}
+export function getStatTotal(playerName, identifier, sheet=statsSheet, type='base') {
+    return sheet[type].totals[0]?.stats[sheet[type].totals[0].stats.findIndex(stat => stat.identifier.key === identifier)]?.value
+} 
