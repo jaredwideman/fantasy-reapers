@@ -1,12 +1,12 @@
 {
   "files": {
-    "main.js": "/fantasy-reapers/static/js/main.5f11e6f2.js",
+    "main.js": "/fantasy-reapers/static/js/main.c965683b.js",
     "static/js/377.bc2c3925.chunk.js": "/fantasy-reapers/static/js/377.bc2c3925.chunk.js",
     "index.html": "/fantasy-reapers/index.html",
-    "main.5f11e6f2.js.map": "/fantasy-reapers/static/js/main.5f11e6f2.js.map",
+    "main.c965683b.js.map": "/fantasy-reapers/static/js/main.c965683b.js.map",
     "377.bc2c3925.chunk.js.map": "/fantasy-reapers/static/js/377.bc2c3925.chunk.js.map"
   },
   "entrypoints": [
-    "static/js/main.5f11e6f2.js"
+    "static/js/main.c965683b.js"
   ]
 }
