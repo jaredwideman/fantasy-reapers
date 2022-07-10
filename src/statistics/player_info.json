@@ -1,7 +1,7 @@
 {
     "players": [{
         "name": "McIntyre",
-        "positions": "C",
+        "positions": "C | SP",
         "batting_owners": ["wideman", "easterbrook"],
         "pitching_owners": [],
         "primarily_pitcher": false
@@ -90,8 +90,8 @@
         "pitching_owners": ["easterbrook", "coughlan"],
         "primarily_pitcher": true
     }, {
-        "name": "(All Other Relievers)",
-        "positions": "RP",
+        "name": "(All Other Pitchers)",
+        "positions": "P",
         "batting_owners": [],
         "pitching_owners": ["wideman", "ellingham"],
         "primarily_pitcher": true

@@ -358,7 +358,7 @@
                 "category": "defense",
                 "key": "outs"
             },
-            "value": "36",
+            "value": "39",
             "format": {
                 "remove_zero": false,
                 "type": "decimal",
@@ -369,7 +369,7 @@
                 "category": "defense",
                 "key": "GP:P"
             },
-            "value": "2",
+            "value": "3",
             "format": {
                 "remove_zero": false,
                 "type": "decimal",
@@ -457,7 +457,7 @@
                 "category": "defense",
                 "key": "H"
             },
-            "value": "10",
+            "value": "11",
             "format": {
                 "remove_zero": false,
                 "type": "decimal",
@@ -534,7 +534,7 @@
                 "category": "defense",
                 "key": "WHIP"
             },
-            "value": "1.16666666667",
+            "value": "1.15384615385",
             "format": {
                 "remove_zero": true,
                 "type": "decimal",
@@ -1134,7 +1134,7 @@
                 "category": "defense",
                 "key": "outs"
             },
-            "value": "42",
+            "value": "60",
             "format": {
                 "remove_zero": false,
                 "type": "decimal",
@@ -1145,7 +1145,7 @@
                 "category": "defense",
                 "key": "GP:P"
             },
-            "value": "3",
+            "value": "4",
             "format": {
                 "remove_zero": false,
                 "type": "decimal",
@@ -1156,7 +1156,7 @@
                 "category": "defense",
                 "key": "GS"
             },
-            "value": "2",
+            "value": "3",
             "format": {
                 "remove_zero": false,
                 "type": "decimal",
@@ -1167,7 +1167,7 @@
                 "category": "defense",
                 "key": "W"
             },
-            "value": "2",
+            "value": "3",
             "format": {
                 "remove_zero": false,
                 "type": "decimal",
@@ -1233,7 +1233,7 @@
                 "category": "defense",
                 "key": "H"
             },
-            "value": "13",
+            "value": "20",
             "format": {
                 "remove_zero": false,
                 "type": "decimal",
@@ -1244,7 +1244,7 @@
                 "category": "defense",
                 "key": "R"
             },
-            "value": "4",
+            "value": "8",
             "format": {
                 "remove_zero": false,
                 "type": "decimal",
@@ -1255,7 +1255,7 @@
                 "category": "defense",
                 "key": "ER"
             },
-            "value": "1",
+            "value": "4",
             "format": {
                 "remove_zero": false,
                 "type": "decimal",
@@ -1266,7 +1266,7 @@
                 "category": "defense",
                 "key": "BB"
             },
-            "value": "5",
+            "value": "7",
             "format": {
                 "remove_zero": false,
                 "type": "decimal",
@@ -1277,7 +1277,7 @@
                 "category": "defense",
                 "key": "SO"
             },
-            "value": "12",
+            "value": "15",
             "format": {
                 "remove_zero": false,
                 "type": "decimal",
@@ -1288,7 +1288,7 @@
                 "category": "defense",
                 "key": "HBP"
             },
-            "value": "0",
+            "value": "1",
             "format": {
                 "remove_zero": false,
                 "type": "decimal",
@@ -1299,7 +1299,7 @@
                 "category": "defense",
                 "key": "ERA"
             },
-            "value": "0.642857142857",
+            "value": "1.8",
             "format": {
                 "remove_zero": true,
                 "type": "decimal",
@@ -1310,7 +1310,7 @@
                 "category": "defense",
                 "key": "WHIP"
             },
-            "value": "1.28571428571",
+            "value": "1.35",
             "format": {
                 "remove_zero": true,
                 "type": "decimal",
@@ -1518,7 +1518,7 @@
                 "category": "defense",
                 "key": "outs"
             },
-            "value": "226",
+            "value": "247",
             "format": {
                 "remove_zero": false,
                 "type": "decimal",
@@ -1529,7 +1529,7 @@
                 "category": "defense",
                 "key": "GP:P"
             },
-            "value": "12",
+            "value": "13",
             "format": {
                 "remove_zero": false,
                 "type": "decimal",
@@ -1540,7 +1540,7 @@
                 "category": "defense",
                 "key": "GS"
             },
-            "value": "12",
+            "value": "13",
             "format": {
                 "remove_zero": false,
                 "type": "decimal",
@@ -1551,7 +1551,7 @@
                 "category": "defense",
                 "key": "W"
             },
-            "value": "8",
+            "value": "9",
             "format": {
                 "remove_zero": false,
                 "type": "decimal",
@@ -1617,7 +1617,7 @@
                 "category": "defense",
                 "key": "H"
             },
-            "value": "66",
+            "value": "74",
             "format": {
                 "remove_zero": false,
                 "type": "decimal",
@@ -1628,7 +1628,7 @@
                 "category": "defense",
                 "key": "R"
             },
-            "value": "42",
+            "value": "46",
             "format": {
                 "remove_zero": false,
                 "type": "decimal",
@@ -1639,7 +1639,7 @@
                 "category": "defense",
                 "key": "ER"
             },
-            "value": "20",
+            "value": "23",
             "format": {
                 "remove_zero": false,
                 "type": "decimal",
@@ -1650,7 +1650,7 @@
                 "category": "defense",
                 "key": "BB"
             },
-            "value": "46",
+            "value": "48",
             "format": {
                 "remove_zero": false,
                 "type": "decimal",
@@ -1661,7 +1661,7 @@
                 "category": "defense",
                 "key": "SO"
             },
-            "value": "90",
+            "value": "93",
             "format": {
                 "remove_zero": false,
                 "type": "decimal",
@@ -1672,7 +1672,7 @@
                 "category": "defense",
                 "key": "HBP"
             },
-            "value": "9",
+            "value": "10",
             "format": {
                 "remove_zero": false,
                 "type": "decimal",
@@ -1683,7 +1683,7 @@
                 "category": "defense",
                 "key": "ERA"
             },
-            "value": "2.38938053097",
+            "value": "2.51417004049",
             "format": {
                 "remove_zero": true,
                 "type": "decimal",
@@ -1694,7 +1694,7 @@
                 "category": "defense",
                 "key": "WHIP"
             },
-            "value": "1.48672566372",
+            "value": "1.48178137652",
             "format": {
                 "remove_zero": true,
                 "type": "decimal",

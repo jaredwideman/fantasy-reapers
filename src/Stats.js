@@ -46,7 +46,7 @@ function getPlayerBattingTotal(name, type='base') {
         'sheet': statsSheetExtra
     }, {
         'stat': 'SO',
-        'multiplier': -1,
+        'multiplier': -0.5,
         'sheet': statsSheet
     }, {
         'stat': 'BB',

@@ -173,7 +173,7 @@
                 "category": "offense",
                 "key": "GP"
             },
-            "value": "7",
+            "value": "8",
             "format": {
                 "remove_zero": false,
                 "type": "decimal",
@@ -184,7 +184,7 @@
                 "category": "offense",
                 "key": "PA"
             },
-            "value": "25",
+            "value": "29",
             "format": {
                 "remove_zero": false,
                 "type": "decimal",
@@ -195,7 +195,7 @@
                 "category": "offense",
                 "key": "AB"
             },
-            "value": "19",
+            "value": "22",
             "format": {
                 "remove_zero": false,
                 "type": "decimal",
@@ -206,7 +206,7 @@
                 "category": "offense",
                 "key": "PA/BB"
             },
-            "value": "12.5",
+            "value": "9.66666666667",
             "format": {
                 "remove_zero": true,
                 "type": "decimal",
@@ -217,7 +217,7 @@
                 "category": "offense",
                 "key": "BB/K"
             },
-            "value": "2",
+            "value": "3",
             "format": {
                 "remove_zero": true,
                 "type": "decimal",
@@ -228,7 +228,7 @@
                 "category": "offense",
                 "key": "C%"
             },
-            "value": "0.947368421053",
+            "value": "0.954545454545",
             "format": {
                 "remove_zero": true,
                 "type": "decimal",
@@ -250,7 +250,7 @@
                 "category": "offense",
                 "key": "SB"
             },
-            "value": "1",
+            "value": "2",
             "format": {
                 "remove_zero": false,
                 "type": "decimal",
@@ -316,7 +316,7 @@
                 "category": "offense",
                 "key": "XBH"
             },
-            "value": "4",
+            "value": "5",
             "format": {
                 "remove_zero": false,
                 "type": "decimal",
@@ -327,7 +327,7 @@
                 "category": "offense",
                 "key": "TB"
             },
-            "value": "14",
+            "value": "17",
             "format": {
                 "remove_zero": false,
                 "type": "decimal",
@@ -349,7 +349,7 @@
                 "category": "offense",
                 "key": "BA/RISP"
             },
-            "value": "0.428571428571",
+            "value": "0.5",
             "format": {
                 "remove_zero": true,
                 "type": "decimal",
@@ -360,7 +360,7 @@
                 "category": "offense",
                 "key": "SLG"
             },
-            "value": "0.736842105263",
+            "value": "0.772727272727",
             "format": {
                 "remove_zero": true,
                 "type": "decimal",
@@ -788,211 +788,6 @@
                 "category": "offense",
                 "key": "GP"
             },
-            "value": "10",
-            "format": {
-                "remove_zero": false,
-                "type": "decimal",
-                "precision": 0
-            }
-        }, {
-            "identifier": {
-                "category": "offense",
-                "key": "PA"
-            },
-            "value": "38",
-            "format": {
-                "remove_zero": false,
-                "type": "decimal",
-                "precision": 0
-            }
-        }, {
-            "identifier": {
-                "category": "offense",
-                "key": "AB"
-            },
-            "value": "30",
-            "format": {
-                "remove_zero": false,
-                "type": "decimal",
-                "precision": 0
-            }
-        }, {
-            "identifier": {
-                "category": "offense",
-                "key": "PA/BB"
-            },
-            "value": "6.33333333333",
-            "format": {
-                "remove_zero": true,
-                "type": "decimal",
-                "precision": 3
-            }
-        }, {
-            "identifier": {
-                "category": "offense",
-                "key": "BB/K"
-            },
-            "value": "1.5",
-            "format": {
-                "remove_zero": true,
-                "type": "decimal",
-                "precision": 3
-            }
-        }, {
-            "identifier": {
-                "category": "offense",
-                "key": "C%"
-            },
-            "value": "0.866666666667",
-            "format": {
-                "remove_zero": true,
-                "type": "decimal",
-                "precision": 3
-            }
-        }, {
-            "identifier": {
-                "category": "offense",
-                "key": "SOL"
-            },
-            "value": "2",
-            "format": {
-                "remove_zero": false,
-                "type": "decimal",
-                "precision": 0
-            }
-        }, {
-            "identifier": {
-                "category": "offense",
-                "key": "SB"
-            },
-            "value": "5",
-            "format": {
-                "remove_zero": false,
-                "type": "decimal",
-                "precision": 0
-            }
-        }, {
-            "identifier": {
-                "category": "offense",
-                "key": "CS"
-            },
-            "value": "0",
-            "format": {
-                "remove_zero": false,
-                "type": "decimal",
-                "precision": 0
-            }
-        }, {
-            "identifier": {
-                "category": "offense",
-                "key": "SB%"
-            },
-            "value": "1",
-            "format": {
-                "remove_zero": true,
-                "type": "decimal",
-                "precision": 3
-            }
-        }, {
-            "identifier": {
-                "category": "offense",
-                "key": "PIK"
-            },
-            "value": "0",
-            "format": {
-                "remove_zero": false,
-                "type": "decimal",
-                "precision": 0
-            }
-        }, {
-            "identifier": {
-                "category": "offense",
-                "key": "GIDP"
-            },
-            "value": "0",
-            "format": {
-                "remove_zero": false,
-                "type": "decimal",
-                "precision": 0
-            }
-        }, {
-            "identifier": {
-                "category": "offense",
-                "key": "GITP"
-            },
-            "value": "0",
-            "format": {
-                "remove_zero": false,
-                "type": "decimal",
-                "precision": 0
-            }
-        }, {
-            "identifier": {
-                "category": "offense",
-                "key": "XBH"
-            },
-            "value": "2",
-            "format": {
-                "remove_zero": false,
-                "type": "decimal",
-                "precision": 0
-            }
-        }, {
-            "identifier": {
-                "category": "offense",
-                "key": "TB"
-            },
-            "value": "16",
-            "format": {
-                "remove_zero": false,
-                "type": "decimal",
-                "precision": 0
-            }
-        }, {
-            "identifier": {
-                "category": "offense",
-                "key": "AB/HR"
-            },
-            "value": "0",
-            "format": {
-                "remove_zero": true,
-                "type": "decimal",
-                "precision": 3
-            }
-        }, {
-            "identifier": {
-                "category": "offense",
-                "key": "BA/RISP"
-            },
-            "value": "0.727272727273",
-            "format": {
-                "remove_zero": true,
-                "type": "decimal",
-                "precision": 3
-            }
-        }, {
-            "identifier": {
-                "category": "offense",
-                "key": "SLG"
-            },
-            "value": "0.533333333333",
-            "format": {
-                "remove_zero": true,
-                "type": "decimal",
-                "precision": 3
-            }
-        }]
-    }, {
-        "row_info": {
-            "player_id": "6270217169b13f8ce87c30b5",
-            "player_name": "Mark McIntyre",
-            "player_number": "34"
-        },
-        "stats": [{
-            "identifier": {
-                "category": "offense",
-                "key": "GP"
-            },
             "value": "11",
             "format": {
                 "remove_zero": false,
@@ -1015,7 +810,7 @@
                 "category": "offense",
                 "key": "AB"
             },
-            "value": "35",
+            "value": "34",
             "format": {
                 "remove_zero": false,
                 "type": "decimal",
@@ -1026,7 +821,7 @@
                 "category": "offense",
                 "key": "PA/BB"
             },
-            "value": "6",
+            "value": "7",
             "format": {
                 "remove_zero": true,
                 "type": "decimal",
@@ -1037,7 +832,7 @@
                 "category": "offense",
                 "key": "BB/K"
             },
-            "value": "2.33333333333",
+            "value": "1.2",
             "format": {
                 "remove_zero": true,
                 "type": "decimal",
@@ -1048,7 +843,7 @@
                 "category": "offense",
                 "key": "C%"
             },
-            "value": "0.914285714286",
+            "value": "0.852941176471",
             "format": {
                 "remove_zero": true,
                 "type": "decimal",
@@ -1059,7 +854,7 @@
                 "category": "offense",
                 "key": "SOL"
             },
-            "value": "1",
+            "value": "2",
             "format": {
                 "remove_zero": false,
                 "type": "decimal",
@@ -1136,7 +931,7 @@
                 "category": "offense",
                 "key": "XBH"
             },
-            "value": "4",
+            "value": "3",
             "format": {
                 "remove_zero": false,
                 "type": "decimal",
@@ -1147,7 +942,7 @@
                 "category": "offense",
                 "key": "TB"
             },
-            "value": "18",
+            "value": "19",
             "format": {
                 "remove_zero": false,
                 "type": "decimal",
@@ -1158,7 +953,7 @@
                 "category": "offense",
                 "key": "AB/HR"
             },
-            "value": "35",
+            "value": "0",
             "format": {
                 "remove_zero": true,
                 "type": "decimal",
@@ -1169,7 +964,7 @@
                 "category": "offense",
                 "key": "BA/RISP"
             },
-            "value": "0.375",
+            "value": "0.692307692308",
             "format": {
                 "remove_zero": true,
                 "type": "decimal",
@@ -1180,7 +975,212 @@
                 "category": "offense",
                 "key": "SLG"
             },
-            "value": "0.514285714286",
+            "value": "0.558823529412",
+            "format": {
+                "remove_zero": true,
+                "type": "decimal",
+                "precision": 3
+            }
+        }]
+    }, {
+        "row_info": {
+            "player_id": "6270217169b13f8ce87c30b5",
+            "player_name": "Mark McIntyre",
+            "player_number": "34"
+        },
+        "stats": [{
+            "identifier": {
+                "category": "offense",
+                "key": "GP"
+            },
+            "value": "12",
+            "format": {
+                "remove_zero": false,
+                "type": "decimal",
+                "precision": 0
+            }
+        }, {
+            "identifier": {
+                "category": "offense",
+                "key": "PA"
+            },
+            "value": "46",
+            "format": {
+                "remove_zero": false,
+                "type": "decimal",
+                "precision": 0
+            }
+        }, {
+            "identifier": {
+                "category": "offense",
+                "key": "AB"
+            },
+            "value": "37",
+            "format": {
+                "remove_zero": false,
+                "type": "decimal",
+                "precision": 0
+            }
+        }, {
+            "identifier": {
+                "category": "offense",
+                "key": "PA/BB"
+            },
+            "value": "5.11111111111",
+            "format": {
+                "remove_zero": true,
+                "type": "decimal",
+                "precision": 3
+            }
+        }, {
+            "identifier": {
+                "category": "offense",
+                "key": "BB/K"
+            },
+            "value": "2.25",
+            "format": {
+                "remove_zero": true,
+                "type": "decimal",
+                "precision": 3
+            }
+        }, {
+            "identifier": {
+                "category": "offense",
+                "key": "C%"
+            },
+            "value": "0.891891891892",
+            "format": {
+                "remove_zero": true,
+                "type": "decimal",
+                "precision": 3
+            }
+        }, {
+            "identifier": {
+                "category": "offense",
+                "key": "SOL"
+            },
+            "value": "1",
+            "format": {
+                "remove_zero": false,
+                "type": "decimal",
+                "precision": 0
+            }
+        }, {
+            "identifier": {
+                "category": "offense",
+                "key": "SB"
+            },
+            "value": "6",
+            "format": {
+                "remove_zero": false,
+                "type": "decimal",
+                "precision": 0
+            }
+        }, {
+            "identifier": {
+                "category": "offense",
+                "key": "CS"
+            },
+            "value": "0",
+            "format": {
+                "remove_zero": false,
+                "type": "decimal",
+                "precision": 0
+            }
+        }, {
+            "identifier": {
+                "category": "offense",
+                "key": "SB%"
+            },
+            "value": "1",
+            "format": {
+                "remove_zero": true,
+                "type": "decimal",
+                "precision": 3
+            }
+        }, {
+            "identifier": {
+                "category": "offense",
+                "key": "PIK"
+            },
+            "value": "0",
+            "format": {
+                "remove_zero": false,
+                "type": "decimal",
+                "precision": 0
+            }
+        }, {
+            "identifier": {
+                "category": "offense",
+                "key": "GIDP"
+            },
+            "value": "1",
+            "format": {
+                "remove_zero": false,
+                "type": "decimal",
+                "precision": 0
+            }
+        }, {
+            "identifier": {
+                "category": "offense",
+                "key": "GITP"
+            },
+            "value": "0",
+            "format": {
+                "remove_zero": false,
+                "type": "decimal",
+                "precision": 0
+            }
+        }, {
+            "identifier": {
+                "category": "offense",
+                "key": "XBH"
+            },
+            "value": "5",
+            "format": {
+                "remove_zero": false,
+                "type": "decimal",
+                "precision": 0
+            }
+        }, {
+            "identifier": {
+                "category": "offense",
+                "key": "TB"
+            },
+            "value": "20",
+            "format": {
+                "remove_zero": false,
+                "type": "decimal",
+                "precision": 0
+            }
+        }, {
+            "identifier": {
+                "category": "offense",
+                "key": "AB/HR"
+            },
+            "value": "37",
+            "format": {
+                "remove_zero": true,
+                "type": "decimal",
+                "precision": 3
+            }
+        }, {
+            "identifier": {
+                "category": "offense",
+                "key": "BA/RISP"
+            },
+            "value": "0.352941176471",
+            "format": {
+                "remove_zero": true,
+                "type": "decimal",
+                "precision": 3
+            }
+        }, {
+            "identifier": {
+                "category": "offense",
+                "key": "SLG"
+            },
+            "value": "0.540540540541",
             "format": {
                 "remove_zero": true,
                 "type": "decimal",
@@ -2018,7 +2018,7 @@
                 "category": "offense",
                 "key": "GP"
             },
-            "value": "6",
+            "value": "7",
             "format": {
                 "remove_zero": false,
                 "type": "decimal",
@@ -2029,7 +2029,7 @@
                 "category": "offense",
                 "key": "PA"
             },
-            "value": "20",
+            "value": "24",
             "format": {
                 "remove_zero": false,
                 "type": "decimal",
@@ -2040,7 +2040,7 @@
                 "category": "offense",
                 "key": "AB"
             },
-            "value": "15",
+            "value": "18",
             "format": {
                 "remove_zero": false,
                 "type": "decimal",
@@ -2051,7 +2051,212 @@
                 "category": "offense",
                 "key": "PA/BB"
             },
+            "value": "6",
+            "format": {
+                "remove_zero": true,
+                "type": "decimal",
+                "precision": 3
+            }
+        }, {
+            "identifier": {
+                "category": "offense",
+                "key": "BB/K"
+            },
+            "value": "1",
+            "format": {
+                "remove_zero": true,
+                "type": "decimal",
+                "precision": 3
+            }
+        }, {
+            "identifier": {
+                "category": "offense",
+                "key": "C%"
+            },
+            "value": "0.777777777778",
+            "format": {
+                "remove_zero": true,
+                "type": "decimal",
+                "precision": 3
+            }
+        }, {
+            "identifier": {
+                "category": "offense",
+                "key": "SOL"
+            },
+            "value": "1",
+            "format": {
+                "remove_zero": false,
+                "type": "decimal",
+                "precision": 0
+            }
+        }, {
+            "identifier": {
+                "category": "offense",
+                "key": "SB"
+            },
+            "value": "1",
+            "format": {
+                "remove_zero": false,
+                "type": "decimal",
+                "precision": 0
+            }
+        }, {
+            "identifier": {
+                "category": "offense",
+                "key": "CS"
+            },
+            "value": "0",
+            "format": {
+                "remove_zero": false,
+                "type": "decimal",
+                "precision": 0
+            }
+        }, {
+            "identifier": {
+                "category": "offense",
+                "key": "SB%"
+            },
+            "value": "1",
+            "format": {
+                "remove_zero": true,
+                "type": "decimal",
+                "precision": 3
+            }
+        }, {
+            "identifier": {
+                "category": "offense",
+                "key": "PIK"
+            },
+            "value": "0",
+            "format": {
+                "remove_zero": false,
+                "type": "decimal",
+                "precision": 0
+            }
+        }, {
+            "identifier": {
+                "category": "offense",
+                "key": "GIDP"
+            },
+            "value": "0",
+            "format": {
+                "remove_zero": false,
+                "type": "decimal",
+                "precision": 0
+            }
+        }, {
+            "identifier": {
+                "category": "offense",
+                "key": "GITP"
+            },
+            "value": "0",
+            "format": {
+                "remove_zero": false,
+                "type": "decimal",
+                "precision": 0
+            }
+        }, {
+            "identifier": {
+                "category": "offense",
+                "key": "XBH"
+            },
+            "value": "0",
+            "format": {
+                "remove_zero": false,
+                "type": "decimal",
+                "precision": 0
+            }
+        }, {
+            "identifier": {
+                "category": "offense",
+                "key": "TB"
+            },
             "value": "5",
+            "format": {
+                "remove_zero": false,
+                "type": "decimal",
+                "precision": 0
+            }
+        }, {
+            "identifier": {
+                "category": "offense",
+                "key": "AB/HR"
+            },
+            "value": "0",
+            "format": {
+                "remove_zero": true,
+                "type": "decimal",
+                "precision": 3
+            }
+        }, {
+            "identifier": {
+                "category": "offense",
+                "key": "BA/RISP"
+            },
+            "value": "0.285714285714",
+            "format": {
+                "remove_zero": true,
+                "type": "decimal",
+                "precision": 3
+            }
+        }, {
+            "identifier": {
+                "category": "offense",
+                "key": "SLG"
+            },
+            "value": "0.277777777778",
+            "format": {
+                "remove_zero": true,
+                "type": "decimal",
+                "precision": 3
+            }
+        }]
+    }, {
+        "row_info": {
+            "player_id": "6270216935e49ded6a568382",
+            "player_name": "Randy Frobel",
+            "player_number": "24"
+        },
+        "stats": [{
+            "identifier": {
+                "category": "offense",
+                "key": "GP"
+            },
+            "value": "11",
+            "format": {
+                "remove_zero": false,
+                "type": "decimal",
+                "precision": 0
+            }
+        }, {
+            "identifier": {
+                "category": "offense",
+                "key": "PA"
+            },
+            "value": "44",
+            "format": {
+                "remove_zero": false,
+                "type": "decimal",
+                "precision": 0
+            }
+        }, {
+            "identifier": {
+                "category": "offense",
+                "key": "AB"
+            },
+            "value": "38",
+            "format": {
+                "remove_zero": false,
+                "type": "decimal",
+                "precision": 0
+            }
+        }, {
+            "identifier": {
+                "category": "offense",
+                "key": "PA/BB"
+            },
+            "value": "11",
             "format": {
                 "remove_zero": true,
                 "type": "decimal",
@@ -2073,212 +2278,7 @@
                 "category": "offense",
                 "key": "C%"
             },
-            "value": "0.8",
-            "format": {
-                "remove_zero": true,
-                "type": "decimal",
-                "precision": 3
-            }
-        }, {
-            "identifier": {
-                "category": "offense",
-                "key": "SOL"
-            },
-            "value": "1",
-            "format": {
-                "remove_zero": false,
-                "type": "decimal",
-                "precision": 0
-            }
-        }, {
-            "identifier": {
-                "category": "offense",
-                "key": "SB"
-            },
-            "value": "0",
-            "format": {
-                "remove_zero": false,
-                "type": "decimal",
-                "precision": 0
-            }
-        }, {
-            "identifier": {
-                "category": "offense",
-                "key": "CS"
-            },
-            "value": "0",
-            "format": {
-                "remove_zero": false,
-                "type": "decimal",
-                "precision": 0
-            }
-        }, {
-            "identifier": {
-                "category": "offense",
-                "key": "SB%"
-            },
-            "value": "0",
-            "format": {
-                "remove_zero": true,
-                "type": "decimal",
-                "precision": 3
-            }
-        }, {
-            "identifier": {
-                "category": "offense",
-                "key": "PIK"
-            },
-            "value": "0",
-            "format": {
-                "remove_zero": false,
-                "type": "decimal",
-                "precision": 0
-            }
-        }, {
-            "identifier": {
-                "category": "offense",
-                "key": "GIDP"
-            },
-            "value": "0",
-            "format": {
-                "remove_zero": false,
-                "type": "decimal",
-                "precision": 0
-            }
-        }, {
-            "identifier": {
-                "category": "offense",
-                "key": "GITP"
-            },
-            "value": "0",
-            "format": {
-                "remove_zero": false,
-                "type": "decimal",
-                "precision": 0
-            }
-        }, {
-            "identifier": {
-                "category": "offense",
-                "key": "XBH"
-            },
-            "value": "0",
-            "format": {
-                "remove_zero": false,
-                "type": "decimal",
-                "precision": 0
-            }
-        }, {
-            "identifier": {
-                "category": "offense",
-                "key": "TB"
-            },
-            "value": "5",
-            "format": {
-                "remove_zero": false,
-                "type": "decimal",
-                "precision": 0
-            }
-        }, {
-            "identifier": {
-                "category": "offense",
-                "key": "AB/HR"
-            },
-            "value": "0",
-            "format": {
-                "remove_zero": true,
-                "type": "decimal",
-                "precision": 3
-            }
-        }, {
-            "identifier": {
-                "category": "offense",
-                "key": "BA/RISP"
-            },
-            "value": "0.4",
-            "format": {
-                "remove_zero": true,
-                "type": "decimal",
-                "precision": 3
-            }
-        }, {
-            "identifier": {
-                "category": "offense",
-                "key": "SLG"
-            },
-            "value": "0.333333333333",
-            "format": {
-                "remove_zero": true,
-                "type": "decimal",
-                "precision": 3
-            }
-        }]
-    }, {
-        "row_info": {
-            "player_id": "6270216935e49ded6a568382",
-            "player_name": "Randy Frobel",
-            "player_number": "24"
-        },
-        "stats": [{
-            "identifier": {
-                "category": "offense",
-                "key": "GP"
-            },
-            "value": "10",
-            "format": {
-                "remove_zero": false,
-                "type": "decimal",
-                "precision": 0
-            }
-        }, {
-            "identifier": {
-                "category": "offense",
-                "key": "PA"
-            },
-            "value": "40",
-            "format": {
-                "remove_zero": false,
-                "type": "decimal",
-                "precision": 0
-            }
-        }, {
-            "identifier": {
-                "category": "offense",
-                "key": "AB"
-            },
-            "value": "35",
-            "format": {
-                "remove_zero": false,
-                "type": "decimal",
-                "precision": 0
-            }
-        }, {
-            "identifier": {
-                "category": "offense",
-                "key": "PA/BB"
-            },
-            "value": "13.3333333333",
-            "format": {
-                "remove_zero": true,
-                "type": "decimal",
-                "precision": 3
-            }
-        }, {
-            "identifier": {
-                "category": "offense",
-                "key": "BB/K"
-            },
-            "value": "1.5",
-            "format": {
-                "remove_zero": true,
-                "type": "decimal",
-                "precision": 3
-            }
-        }, {
-            "identifier": {
-                "category": "offense",
-                "key": "C%"
-            },
-            "value": "0.942857142857",
+            "value": "0.921052631579",
             "format": {
                 "remove_zero": true,
                 "type": "decimal",
@@ -2377,7 +2377,7 @@
                 "category": "offense",
                 "key": "TB"
             },
-            "value": "18",
+            "value": "19",
             "format": {
                 "remove_zero": false,
                 "type": "decimal",
@@ -2399,7 +2399,7 @@
                 "category": "offense",
                 "key": "BA/RISP"
             },
-            "value": "0.368421052632",
+            "value": "0.380952380952",
             "format": {
                 "remove_zero": true,
                 "type": "decimal",
@@ -2410,7 +2410,7 @@
                 "category": "offense",
                 "key": "SLG"
             },
-            "value": "0.514285714286",
+            "value": "0.5",
             "format": {
                 "remove_zero": true,
                 "type": "decimal",
@@ -2428,7 +2428,7 @@
                 "category": "offense",
                 "key": "GP"
             },
-            "value": "11",
+            "value": "12",
             "format": {
                 "remove_zero": false,
                 "type": "decimal",
@@ -2439,7 +2439,7 @@
                 "category": "offense",
                 "key": "PA"
             },
-            "value": "38",
+            "value": "42",
             "format": {
                 "remove_zero": false,
                 "type": "decimal",
@@ -2450,7 +2450,7 @@
                 "category": "offense",
                 "key": "AB"
             },
-            "value": "35",
+            "value": "39",
             "format": {
                 "remove_zero": false,
                 "type": "decimal",
@@ -2461,7 +2461,7 @@
                 "category": "offense",
                 "key": "PA/BB"
             },
-            "value": "12.6666666667",
+            "value": "14",
             "format": {
                 "remove_zero": true,
                 "type": "decimal",
@@ -2483,7 +2483,7 @@
                 "category": "offense",
                 "key": "C%"
             },
-            "value": "0.771428571429",
+            "value": "0.794871794872",
             "format": {
                 "remove_zero": true,
                 "type": "decimal",
@@ -2582,7 +2582,7 @@
                 "category": "offense",
                 "key": "TB"
             },
-            "value": "11",
+            "value": "13",
             "format": {
                 "remove_zero": false,
                 "type": "decimal",
@@ -2604,7 +2604,7 @@
                 "category": "offense",
                 "key": "BA/RISP"
             },
-            "value": "0.375",
+            "value": "0.388888888889",
             "format": {
                 "remove_zero": true,
                 "type": "decimal",
@@ -2615,7 +2615,7 @@
                 "category": "offense",
                 "key": "SLG"
             },
-            "value": "0.314285714286",
+            "value": "0.333333333333",
             "format": {
                 "remove_zero": true,
                 "type": "decimal",
@@ -2633,7 +2633,7 @@
                 "category": "offense",
                 "key": "GP"
             },
-            "value": "7",
+            "value": "8",
             "format": {
                 "remove_zero": false,
                 "type": "decimal",
@@ -2644,7 +2644,7 @@
                 "category": "offense",
                 "key": "PA"
             },
-            "value": "25",
+            "value": "29",
             "format": {
                 "remove_zero": false,
                 "type": "decimal",
@@ -2655,7 +2655,7 @@
                 "category": "offense",
                 "key": "AB"
             },
-            "value": "23",
+            "value": "27",
             "format": {
                 "remove_zero": false,
                 "type": "decimal",
@@ -2666,7 +2666,7 @@
                 "category": "offense",
                 "key": "PA/BB"
             },
-            "value": "25",
+            "value": "29",
             "format": {
                 "remove_zero": true,
                 "type": "decimal",
@@ -2688,7 +2688,7 @@
                 "category": "offense",
                 "key": "C%"
             },
-            "value": "0.739130434783",
+            "value": "0.777777777778",
             "format": {
                 "remove_zero": true,
                 "type": "decimal",
@@ -2809,7 +2809,7 @@
                 "category": "offense",
                 "key": "BA/RISP"
             },
-            "value": "0.153846153846",
+            "value": "0.125",
             "format": {
                 "remove_zero": true,
                 "type": "decimal",
@@ -2820,7 +2820,7 @@
                 "category": "offense",
                 "key": "SLG"
             },
-            "value": "0.217391304348",
+            "value": "0.185185185185",
             "format": {
                 "remove_zero": true,
                 "type": "decimal",
@@ -2838,7 +2838,7 @@
                 "category": "offense",
                 "key": "GP"
             },
-            "value": "4",
+            "value": "5",
             "format": {
                 "remove_zero": false,
                 "type": "decimal",
@@ -2849,7 +2849,7 @@
                 "category": "offense",
                 "key": "PA"
             },
-            "value": "15",
+            "value": "18",
             "format": {
                 "remove_zero": false,
                 "type": "decimal",
@@ -2860,7 +2860,7 @@
                 "category": "offense",
                 "key": "AB"
             },
-            "value": "11",
+            "value": "13",
             "format": {
                 "remove_zero": false,
                 "type": "decimal",
@@ -2871,7 +2871,7 @@
                 "category": "offense",
                 "key": "PA/BB"
             },
-            "value": "3.75",
+            "value": "3.6",
             "format": {
                 "remove_zero": true,
                 "type": "decimal",
@@ -2882,7 +2882,7 @@
                 "category": "offense",
                 "key": "BB/K"
             },
-            "value": "2",
+            "value": "1.66666666667",
             "format": {
                 "remove_zero": true,
                 "type": "decimal",
@@ -2893,7 +2893,7 @@
                 "category": "offense",
                 "key": "C%"
             },
-            "value": "0.818181818182",
+            "value": "0.769230769231",
             "format": {
                 "remove_zero": true,
                 "type": "decimal",
@@ -2915,7 +2915,7 @@
                 "category": "offense",
                 "key": "SB"
             },
-            "value": "2",
+            "value": "3",
             "format": {
                 "remove_zero": false,
                 "type": "decimal",
@@ -2992,7 +2992,7 @@
                 "category": "offense",
                 "key": "TB"
             },
-            "value": "4",
+            "value": "5",
             "format": {
                 "remove_zero": false,
                 "type": "decimal",
@@ -3025,7 +3025,7 @@
                 "category": "offense",
                 "key": "SLG"
             },
-            "value": "0.363636363636",
+            "value": "0.384615384615",
             "format": {
                 "remove_zero": true,
                 "type": "decimal",
@@ -3658,7 +3658,7 @@
                 "category": "offense",
                 "key": "GP"
             },
-            "value": "9",
+            "value": "10",
             "format": {
                 "remove_zero": false,
                 "type": "decimal",
@@ -3669,7 +3669,7 @@
                 "category": "offense",
                 "key": "PA"
             },
-            "value": "26",
+            "value": "30",
             "format": {
                 "remove_zero": false,
                 "type": "decimal",
@@ -3680,7 +3680,7 @@
                 "category": "offense",
                 "key": "AB"
             },
-            "value": "22",
+            "value": "26",
             "format": {
                 "remove_zero": false,
                 "type": "decimal",
@@ -3691,7 +3691,7 @@
                 "category": "offense",
                 "key": "PA/BB"
             },
-            "value": "8.66666666667",
+            "value": "10",
             "format": {
                 "remove_zero": true,
                 "type": "decimal",
@@ -3702,7 +3702,7 @@
                 "category": "offense",
                 "key": "BB/K"
             },
-            "value": "0.375",
+            "value": "0.272727272727",
             "format": {
                 "remove_zero": true,
                 "type": "decimal",
@@ -3713,7 +3713,7 @@
                 "category": "offense",
                 "key": "C%"
             },
-            "value": "0.636363636364",
+            "value": "0.576923076923",
             "format": {
                 "remove_zero": true,
                 "type": "decimal",
@@ -3724,7 +3724,7 @@
                 "category": "offense",
                 "key": "SOL"
             },
-            "value": "3",
+            "value": "5",
             "format": {
                 "remove_zero": false,
                 "type": "decimal",
@@ -3834,7 +3834,7 @@
                 "category": "offense",
                 "key": "BA/RISP"
             },
-            "value": "0.166666666667",
+            "value": "0.142857142857",
             "format": {
                 "remove_zero": true,
                 "type": "decimal",
@@ -3845,7 +3845,7 @@
                 "category": "offense",
                 "key": "SLG"
             },
-            "value": "0.136363636364",
+            "value": "0.115384615385",
             "format": {
                 "remove_zero": true,
                 "type": "decimal",
@@ -4269,7 +4269,7 @@
                 "category": "offense",
                 "key": "GP"
             },
-            "value": "12",
+            "value": "13",
             "format": {
                 "remove_zero": false,
                 "type": "decimal",
@@ -4280,7 +4280,7 @@
                 "category": "offense",
                 "key": "PA"
             },
-            "value": "393",
+            "value": "428",
             "format": {
                 "remove_zero": false,
                 "type": "decimal",
@@ -4291,7 +4291,7 @@
                 "category": "offense",
                 "key": "AB"
             },
-            "value": "332",
+            "value": "361",
             "format": {
                 "remove_zero": false,
                 "type": "decimal",
@@ -4302,7 +4302,7 @@
                 "category": "offense",
                 "key": "PA/BB"
             },
-            "value": "8.36170212766",
+            "value": "8.23076923077",
             "format": {
                 "remove_zero": true,
                 "type": "decimal",
@@ -4313,7 +4313,7 @@
                 "category": "offense",
                 "key": "BB/K"
             },
-            "value": "0.691176470588",
+            "value": "0.684210526316",
             "format": {
                 "remove_zero": true,
                 "type": "decimal",
@@ -4324,7 +4324,7 @@
                 "category": "offense",
                 "key": "C%"
             },
-            "value": "0.795180722892",
+            "value": "0.789473684211",
             "format": {
                 "remove_zero": true,
                 "type": "decimal",
@@ -4335,7 +4335,7 @@
                 "category": "offense",
                 "key": "SOL"
             },
-            "value": "26",
+            "value": "28",
             "format": {
                 "remove_zero": false,
                 "type": "decimal",
@@ -4346,7 +4346,7 @@
                 "category": "offense",
                 "key": "SB"
             },
-            "value": "27",
+            "value": "31",
             "format": {
                 "remove_zero": false,
                 "type": "decimal",
@@ -4368,7 +4368,7 @@
                 "category": "offense",
                 "key": "SB%"
             },
-            "value": "0.931034482759",
+            "value": "0.939393939394",
             "format": {
                 "remove_zero": true,
                 "type": "decimal",
@@ -4390,7 +4390,7 @@
                 "category": "offense",
                 "key": "GIDP"
             },
-            "value": "3",
+            "value": "4",
             "format": {
                 "remove_zero": false,
                 "type": "decimal",
@@ -4412,7 +4412,7 @@
                 "category": "offense",
                 "key": "XBH"
             },
-            "value": "19",
+            "value": "22",
             "format": {
                 "remove_zero": false,
                 "type": "decimal",
@@ -4423,7 +4423,7 @@
                 "category": "offense",
                 "key": "TB"
             },
-            "value": "121",
+            "value": "133",
             "format": {
                 "remove_zero": false,
                 "type": "decimal",
@@ -4434,7 +4434,7 @@
                 "category": "offense",
                 "key": "AB/HR"
             },
-            "value": "332",
+            "value": "361",
             "format": {
                 "remove_zero": true,
                 "type": "decimal",
@@ -4445,7 +4445,7 @@
                 "category": "offense",
                 "key": "BA/RISP"
             },
-            "value": "0.324137931034",
+            "value": "0.320754716981",
             "format": {
                 "remove_zero": true,
                 "type": "decimal",
@@ -4456,7 +4456,7 @@
                 "category": "offense",
                 "key": "SLG"
             },
-            "value": "0.364457831325",
+            "value": "0.368421052632",
             "format": {
                 "remove_zero": true,
                 "type": "decimal",

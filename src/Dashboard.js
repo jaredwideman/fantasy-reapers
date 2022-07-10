@@ -7,7 +7,6 @@ import {
     Tr,
     Th,
     Td,
-    TableCaption,
     TableContainer,
   } from '@chakra-ui/react';
 
@@ -21,9 +20,9 @@ function Dashboard() {
         let total_before = 0;
         let total = 0;
         getFantasyOwnerBattingTotals(owner, 'before').forEach(player => total_before += player.points)
-        getFantasyOwnerPitchingTotals(owner, 'before').forEach(player => total_before += player.name === '(All Other Relievers)' ? getAllOtherRelieversTotal() : player.points);
+        getFantasyOwnerPitchingTotals(owner, 'before').forEach(player => total_before += player.name === '(All Other Pitchers)' ? getAllOtherRelieversTotal('before') : player.points);
         getFantasyOwnerBattingTotals(owner).forEach(player => total += player.points)
-        getFantasyOwnerPitchingTotals(owner).forEach(player => total += player.name === '(All Other Relievers)' ? getAllOtherRelieversTotal() : player.points);
+        getFantasyOwnerPitchingTotals(owner).forEach(player => total += player.name === '(All Other Pitchers)' ? getAllOtherRelieversTotal() : player.points);
         table_contents.push({owner, total, 'diff': total - total_before})
     });
 
@@ -33,7 +32,7 @@ function Dashboard() {
 
     return (    
         <Center>
-    <Box p='6' maxW='lg' borderWidth='1px' borderRadius='lg' overflow='hidden' style={{"text-transform": "capitalize"}}>
+    <Box p='6' borderWidth='1px' borderRadius='lg' overflow='hidden' style={{"text-transform": "capitalize"}}>
 <TableContainer>
     <Table size='sm' variant='simple'>
       <Thead>

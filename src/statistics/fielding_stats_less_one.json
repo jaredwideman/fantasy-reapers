@@ -74,7 +74,7 @@
                 "category": "defense",
                 "key": "TC"
             },
-            "value": "22",
+            "value": "27",
             "format": {
                 "remove_zero": false,
                 "type": "decimal",
@@ -85,7 +85,7 @@
                 "category": "defense",
                 "key": "A"
             },
-            "value": "10",
+            "value": "13",
             "format": {
                 "remove_zero": false,
                 "type": "decimal",
@@ -96,7 +96,7 @@
                 "category": "defense",
                 "key": "PO"
             },
-            "value": "8",
+            "value": "10",
             "format": {
                 "remove_zero": false,
                 "type": "decimal",
@@ -118,7 +118,7 @@
                 "category": "defense",
                 "key": "DP"
             },
-            "value": "3",
+            "value": "4",
             "format": {
                 "remove_zero": false,
                 "type": "decimal",
@@ -140,7 +140,7 @@
                 "category": "defense",
                 "key": "FPCT"
             },
-            "value": "0.818181818182",
+            "value": "0.851851851852",
             "format": {
                 "remove_zero": true,
                 "type": "decimal",
@@ -326,7 +326,7 @@
                 "category": "defense",
                 "key": "TC"
             },
-            "value": "15",
+            "value": "17",
             "format": {
                 "remove_zero": false,
                 "type": "decimal",
@@ -348,7 +348,7 @@
                 "category": "defense",
                 "key": "PO"
             },
-            "value": "15",
+            "value": "17",
             "format": {
                 "remove_zero": false,
                 "type": "decimal",
@@ -494,7 +494,7 @@
                 "category": "defense",
                 "key": "TC"
             },
-            "value": "94",
+            "value": "99",
             "format": {
                 "remove_zero": false,
                 "type": "decimal",
@@ -516,7 +516,7 @@
                 "category": "defense",
                 "key": "PO"
             },
-            "value": "84",
+            "value": "89",
             "format": {
                 "remove_zero": false,
                 "type": "decimal",
@@ -560,7 +560,7 @@
                 "category": "defense",
                 "key": "FPCT"
             },
-            "value": "0.946808510638",
+            "value": "0.949494949495",
             "format": {
                 "remove_zero": true,
                 "type": "decimal",
@@ -914,7 +914,7 @@
                 "category": "defense",
                 "key": "TC"
             },
-            "value": "21",
+            "value": "25",
             "format": {
                 "remove_zero": false,
                 "type": "decimal",
@@ -925,7 +925,7 @@
                 "category": "defense",
                 "key": "A"
             },
-            "value": "10",
+            "value": "12",
             "format": {
                 "remove_zero": false,
                 "type": "decimal",
@@ -936,7 +936,7 @@
                 "category": "defense",
                 "key": "PO"
             },
-            "value": "11",
+            "value": "13",
             "format": {
                 "remove_zero": false,
                 "type": "decimal",
@@ -998,7 +998,7 @@
                 "category": "defense",
                 "key": "TC"
             },
-            "value": "22",
+            "value": "24",
             "format": {
                 "remove_zero": false,
                 "type": "decimal",
@@ -1009,7 +1009,7 @@
                 "category": "defense",
                 "key": "A"
             },
-            "value": "14",
+            "value": "15",
             "format": {
                 "remove_zero": false,
                 "type": "decimal",
@@ -1031,7 +1031,7 @@
                 "category": "defense",
                 "key": "E"
             },
-            "value": "3",
+            "value": "4",
             "format": {
                 "remove_zero": false,
                 "type": "decimal",
@@ -1064,7 +1064,7 @@
                 "category": "defense",
                 "key": "FPCT"
             },
-            "value": "0.863636363636",
+            "value": "0.833333333333",
             "format": {
                 "remove_zero": true,
                 "type": "decimal",
@@ -1082,7 +1082,7 @@
                 "category": "defense",
                 "key": "TC"
             },
-            "value": "22",
+            "value": "24",
             "format": {
                 "remove_zero": false,
                 "type": "decimal",
@@ -1104,175 +1104,7 @@
                 "category": "defense",
                 "key": "PO"
             },
-            "value": "14",
-            "format": {
-                "remove_zero": false,
-                "type": "decimal",
-                "precision": 0
-            }
-        }, {
-            "identifier": {
-                "category": "defense",
-                "key": "E"
-            },
-            "value": "1",
-            "format": {
-                "remove_zero": false,
-                "type": "decimal",
-                "precision": 0
-            }
-        }, {
-            "identifier": {
-                "category": "defense",
-                "key": "DP"
-            },
-            "value": "1",
-            "format": {
-                "remove_zero": false,
-                "type": "decimal",
-                "precision": 0
-            }
-        }, {
-            "identifier": {
-                "category": "defense",
-                "key": "TP"
-            },
-            "value": "0",
-            "format": {
-                "remove_zero": false,
-                "type": "decimal",
-                "precision": 0
-            }
-        }, {
-            "identifier": {
-                "category": "defense",
-                "key": "FPCT"
-            },
-            "value": "0.954545454545",
-            "format": {
-                "remove_zero": true,
-                "type": "decimal",
-                "precision": 3
-            }
-        }]
-    }, {
-        "row_info": {
-            "player_id": "6270216935e49ded6a568384",
-            "player_name": "Jared Wideman",
-            "player_number": "27"
-        },
-        "stats": [{
-            "identifier": {
-                "category": "defense",
-                "key": "TC"
-            },
-            "value": "28",
-            "format": {
-                "remove_zero": false,
-                "type": "decimal",
-                "precision": 0
-            }
-        }, {
-            "identifier": {
-                "category": "defense",
-                "key": "A"
-            },
-            "value": "0",
-            "format": {
-                "remove_zero": false,
-                "type": "decimal",
-                "precision": 0
-            }
-        }, {
-            "identifier": {
-                "category": "defense",
-                "key": "PO"
-            },
-            "value": "27",
-            "format": {
-                "remove_zero": false,
-                "type": "decimal",
-                "precision": 0
-            }
-        }, {
-            "identifier": {
-                "category": "defense",
-                "key": "E"
-            },
-            "value": "1",
-            "format": {
-                "remove_zero": false,
-                "type": "decimal",
-                "precision": 0
-            }
-        }, {
-            "identifier": {
-                "category": "defense",
-                "key": "DP"
-            },
-            "value": "0",
-            "format": {
-                "remove_zero": false,
-                "type": "decimal",
-                "precision": 0
-            }
-        }, {
-            "identifier": {
-                "category": "defense",
-                "key": "TP"
-            },
-            "value": "0",
-            "format": {
-                "remove_zero": false,
-                "type": "decimal",
-                "precision": 0
-            }
-        }, {
-            "identifier": {
-                "category": "defense",
-                "key": "FPCT"
-            },
-            "value": "0.964285714286",
-            "format": {
-                "remove_zero": true,
-                "type": "decimal",
-                "precision": 3
-            }
-        }]
-    }, {
-        "row_info": {
-            "player_id": "627860dfa2c33223889b39e3",
-            "player_name": "Jerome Murray",
-            "player_number": "13"
-        },
-        "stats": [{
-            "identifier": {
-                "category": "defense",
-                "key": "TC"
-            },
-            "value": "7",
-            "format": {
-                "remove_zero": false,
-                "type": "decimal",
-                "precision": 0
-            }
-        }, {
-            "identifier": {
-                "category": "defense",
-                "key": "A"
-            },
-            "value": "4",
-            "format": {
-                "remove_zero": false,
-                "type": "decimal",
-                "precision": 0
-            }
-        }, {
-            "identifier": {
-                "category": "defense",
-                "key": "PO"
-            },
-            "value": "1",
+            "value": "15",
             "format": {
                 "remove_zero": false,
                 "type": "decimal",
@@ -1316,7 +1148,175 @@
                 "category": "defense",
                 "key": "FPCT"
             },
-            "value": "0.714285714286",
+            "value": "0.916666666667",
+            "format": {
+                "remove_zero": true,
+                "type": "decimal",
+                "precision": 3
+            }
+        }]
+    }, {
+        "row_info": {
+            "player_id": "6270216935e49ded6a568384",
+            "player_name": "Jared Wideman",
+            "player_number": "27"
+        },
+        "stats": [{
+            "identifier": {
+                "category": "defense",
+                "key": "TC"
+            },
+            "value": "34",
+            "format": {
+                "remove_zero": false,
+                "type": "decimal",
+                "precision": 0
+            }
+        }, {
+            "identifier": {
+                "category": "defense",
+                "key": "A"
+            },
+            "value": "0",
+            "format": {
+                "remove_zero": false,
+                "type": "decimal",
+                "precision": 0
+            }
+        }, {
+            "identifier": {
+                "category": "defense",
+                "key": "PO"
+            },
+            "value": "33",
+            "format": {
+                "remove_zero": false,
+                "type": "decimal",
+                "precision": 0
+            }
+        }, {
+            "identifier": {
+                "category": "defense",
+                "key": "E"
+            },
+            "value": "1",
+            "format": {
+                "remove_zero": false,
+                "type": "decimal",
+                "precision": 0
+            }
+        }, {
+            "identifier": {
+                "category": "defense",
+                "key": "DP"
+            },
+            "value": "1",
+            "format": {
+                "remove_zero": false,
+                "type": "decimal",
+                "precision": 0
+            }
+        }, {
+            "identifier": {
+                "category": "defense",
+                "key": "TP"
+            },
+            "value": "0",
+            "format": {
+                "remove_zero": false,
+                "type": "decimal",
+                "precision": 0
+            }
+        }, {
+            "identifier": {
+                "category": "defense",
+                "key": "FPCT"
+            },
+            "value": "0.970588235294",
+            "format": {
+                "remove_zero": true,
+                "type": "decimal",
+                "precision": 3
+            }
+        }]
+    }, {
+        "row_info": {
+            "player_id": "627860dfa2c33223889b39e3",
+            "player_name": "Jerome Murray",
+            "player_number": "13"
+        },
+        "stats": [{
+            "identifier": {
+                "category": "defense",
+                "key": "TC"
+            },
+            "value": "9",
+            "format": {
+                "remove_zero": false,
+                "type": "decimal",
+                "precision": 0
+            }
+        }, {
+            "identifier": {
+                "category": "defense",
+                "key": "A"
+            },
+            "value": "5",
+            "format": {
+                "remove_zero": false,
+                "type": "decimal",
+                "precision": 0
+            }
+        }, {
+            "identifier": {
+                "category": "defense",
+                "key": "PO"
+            },
+            "value": "2",
+            "format": {
+                "remove_zero": false,
+                "type": "decimal",
+                "precision": 0
+            }
+        }, {
+            "identifier": {
+                "category": "defense",
+                "key": "E"
+            },
+            "value": "2",
+            "format": {
+                "remove_zero": false,
+                "type": "decimal",
+                "precision": 0
+            }
+        }, {
+            "identifier": {
+                "category": "defense",
+                "key": "DP"
+            },
+            "value": "1",
+            "format": {
+                "remove_zero": false,
+                "type": "decimal",
+                "precision": 0
+            }
+        }, {
+            "identifier": {
+                "category": "defense",
+                "key": "TP"
+            },
+            "value": "0",
+            "format": {
+                "remove_zero": false,
+                "type": "decimal",
+                "precision": 0
+            }
+        }, {
+            "identifier": {
+                "category": "defense",
+                "key": "FPCT"
+            },
+            "value": "0.777777777778",
             "format": {
                 "remove_zero": true,
                 "type": "decimal",
@@ -1586,7 +1586,7 @@
                 "category": "defense",
                 "key": "TC"
             },
-            "value": "5",
+            "value": "7",
             "format": {
                 "remove_zero": false,
                 "type": "decimal",
@@ -1608,7 +1608,7 @@
                 "category": "defense",
                 "key": "PO"
             },
-            "value": "5",
+            "value": "7",
             "format": {
                 "remove_zero": false,
                 "type": "decimal",
@@ -1834,7 +1834,7 @@
                 "category": "defense",
                 "key": "TC"
             },
-            "value": "326",
+            "value": "356",
             "format": {
                 "remove_zero": false,
                 "type": "decimal",
@@ -1845,7 +1845,7 @@
                 "category": "defense",
                 "key": "A"
             },
-            "value": "71",
+            "value": "78",
             "format": {
                 "remove_zero": false,
                 "type": "decimal",
@@ -1856,7 +1856,7 @@
                 "category": "defense",
                 "key": "PO"
             },
-            "value": "226",
+            "value": "247",
             "format": {
                 "remove_zero": false,
                 "type": "decimal",
@@ -1867,7 +1867,7 @@
                 "category": "defense",
                 "key": "E"
             },
-            "value": "29",
+            "value": "31",
             "format": {
                 "remove_zero": false,
                 "type": "decimal",
@@ -1878,7 +1878,7 @@
                 "category": "defense",
                 "key": "DP"
             },
-            "value": "5",
+            "value": "6",
             "format": {
                 "remove_zero": false,
                 "type": "decimal",
@@ -1900,7 +1900,7 @@
                 "category": "defense",
                 "key": "FPCT"
             },
-            "value": "0.911042944785",
+            "value": "0.912921348315",
             "format": {
                 "remove_zero": true,
                 "type": "decimal",

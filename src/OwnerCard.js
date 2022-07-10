@@ -19,11 +19,13 @@ function OwnerCard(props) {
     let total_before = 0;
     let total = 0; 
     getFantasyOwnerBattingTotals(props.name, 'before').forEach(player => total_before += player.points)
-    getFantasyOwnerPitchingTotals(props.name, 'before').forEach(player => total_before += player.name === '(All Other Relievers)' ? getAllOtherRelieversTotal() : player.points);
+    getFantasyOwnerPitchingTotals(props.name, 'before').forEach(player => total_before += player.name === '(All Other Pitchers)' ? getAllOtherRelieversTotal('before') : player.points); // incorrect
     getFantasyOwnerBattingTotals(props.name).forEach(player => total += player.points)
-    getFantasyOwnerPitchingTotals(props.name).forEach(player => total += player.name === '(All Other Relievers)' ? getAllOtherRelieversTotal() : player.points);
+    getFantasyOwnerPitchingTotals(props.name).forEach(player => total += player.name === '(All Other Pitchers)' ? getAllOtherRelieversTotal() : player.points); // correct
+
+    console.log(`jared -> before = ${total_before}, after = ${total}`);
     return (
-    <Box p='6' maxW='lg' borderWidth='1px' borderRadius='lg' overflow='hidden'>
+    <Box p='6' borderWidth='1px' borderRadius='lg' overflow='hidden'>
         <Center>
           <Image src={`headshots/${props.name.toLowerCase()}.png`} alt={`${props.name}`} boxSize='150px' borderRadius='full' marginTop={6} objectFit='cover'/>
         </Center>
@@ -76,9 +78,9 @@ function OwnerCard(props) {
                         </Center>
                     </Td>
                     <Td>{player.name}</Td>
-                    <Td isNumeric>{player.name === '(All Other Relievers)' ? getAllOtherRelieversTotal().toFixed(1) : player.points.toFixed(1)}</Td>
-                    {player.name === '(All Other Relievers)' && <Td isNumeric><Center style={getAllOtherRelieversTotal() - getAllOtherRelieversTotal('before') > 0 ? {color: 'green'} : (getAllOtherRelieversTotal() - getAllOtherRelieversTotal('before') < 0 ? {color: 'red'} : {color: 'black'})}>{getAllOtherRelieversTotal() - getAllOtherRelieversTotal('before') ? '+' : ''}{getAllOtherRelieversTotal() - getAllOtherRelieversTotal('before')}</Center></Td>}
-                    {player.name !== '(All Other Relievers)' &&  <Td isNumeric><Center style={player.points - diffs[i].points > 0 ? {color: 'green'} : (player.points - diffs[i].points < 0 ? {color: 'red'} : {color: 'black'})}>{player.points - diffs[i].points > 0 ? '+' : ''}{player.points - diffs[i].points}</Center></Td>}
+                    <Td isNumeric>{player.name === '(All Other Pitchers)' ? getAllOtherRelieversTotal().toFixed(1) : player.points.toFixed(1)}</Td>
+                    {player.name === '(All Other Pitchers)' && <Td isNumeric><Center style={getAllOtherRelieversTotal() - getAllOtherRelieversTotal('before') > 0 ? {color: 'green'} : (getAllOtherRelieversTotal() - getAllOtherRelieversTotal('before') < 0 ? {color: 'red'} : {color: 'black'})}>{getAllOtherRelieversTotal() - getAllOtherRelieversTotal('before') ? '+' : ''}{getAllOtherRelieversTotal() - getAllOtherRelieversTotal('before')}</Center></Td>}
+                    {player.name !== '(All Other Pitchers)' &&  <Td isNumeric><Center style={player.points - diffs[i].points > 0 ? {color: 'green'} : (player.points - diffs[i].points < 0 ? {color: 'red'} : {color: 'black'})}>{player.points - diffs[i].points > 0 ? '+' : ''}{player.points - diffs[i].points}</Center></Td>}
                   </Tr>);
             })}
             <Tr>
