@@ -149,9 +149,9 @@ function PlayerCard(props) {
     let PIK_pitcher_diff = isNaN(PIK_pitcher - PIK_pitcher_before) ? PIK_pitcher : PIK_pitcher - PIK_pitcher_before;
     let no_hitters_diff = 0; // not tracked by gamechanger...
 
-    let total_pitching_diff = wins_diff*5+losses_diff*4+saves_diff*7+blown_saves_diff*-7+hits_pitcher_diff*-0.5+strikeouts_pitcher_diff*1+walks_pitcher_diff*-1+hbp_pitcher_diff*-1+earned_runs_diff*-1+outs_diff*0.5+PIK_pitcher_diff*2;
+    let total_pitching_diff = wins_diff*5+losses_diff*-4+saves_diff*7+blown_saves_diff*-7+hits_pitcher_diff*-0.5+strikeouts_pitcher_diff*1+walks_pitcher_diff*-1+hbp_pitcher_diff*-1+earned_runs_diff*-1+outs_diff*0.5+PIK_pitcher_diff*2;
 
-    const total_pitching = Number(wins)*5 + Number(losses)*4 + Number(saves)*7 + Number(blown_saves)*-7 + Number(hits_pitcher)*-0.5 + Number(strikeouts_pitcher) + Number(walks_pitcher)*-1 + Number(hbp_pitcher)*-1 + Number(earned_runs)*-1 + Number(outs)*0.5 + Number(PIK_pitcher)*2 + Number(no_hitters)*5;
+    const total_pitching = Number(wins)*5 + Number(losses)*-4 + Number(saves)*7 + Number(blown_saves)*-7 + Number(hits_pitcher)*-0.5 + Number(strikeouts_pitcher) + Number(walks_pitcher)*-1 + Number(hbp_pitcher)*-1 + Number(earned_runs)*-1 + Number(outs)*0.5 + Number(PIK_pitcher)*2 + Number(no_hitters)*5;
     
     const isBatter = Boolean(props.positions.match(/1B|2B|3B|SS|OF|C|DH|Util/g));
     const isPitcher = Boolean(props.positions.match(/[P]/g));
@@ -300,11 +300,11 @@ function PlayerCard(props) {
             <Td isNumeric><Center style={wins_diff > 0 ? {color: 'green'} : (wins_diff < 0 ? {color: 'red'} : {color: 'black'})}>{wins_diff > 0 ? '+' : ''}{wins_diff * 5}</Center></Td>
           </Tr>
           <Tr>
-            <Td>L (4)</Td>
+            <Td>L (-4)</Td>
             <Td isNumeric><Center>{losses}</Center></Td>
-            <Td isNumeric><Center style={losses_diff > 0 ? {color: 'green'} : (losses_diff < 0 ? {color: 'red'} : {color: 'black'})}>{losses_diff > 0 ? '+' : ''}{losses_diff}</Center></Td>
-            <Td isNumeric><Center>{losses * 4}</Center></Td>
-            <Td isNumeric><Center style={losses_diff > 0 ? {color: 'green'} : (losses_diff < 0 ? {color: 'red'} : {color: 'black'})}>{losses_diff > 0 ? '+' : ''}{losses_diff * 4}</Center></Td>
+            <Td isNumeric><Center style={losses_diff > 0 ? {color: 'red'} : (losses_diff < 0 ? {color: 'green'} : {color: 'black'})}>{losses_diff > 0 ? '+' : ''}{losses_diff}</Center></Td>
+            <Td isNumeric><Center>{losses * -4}</Center></Td>
+            <Td isNumeric><Center style={losses_diff > 0 ? {color: 'red'} : (losses_diff < 0 ? {color: 'green'} : {color: 'black'})}>{losses_diff * -4}</Center></Td>
           </Tr>
           <Tr>
             <Td>SV (7)</Td>

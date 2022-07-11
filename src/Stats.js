@@ -78,7 +78,7 @@ function getPlayerPitchingTotal(name, type='base') {
         'sheet': statsSheetPitching
     }, {
         'stat': 'L',
-        'multiplier': 4,
+        'multiplier': -4,
         'sheet': statsSheetPitching
     }, {
         'stat': 'SV',
@@ -132,7 +132,7 @@ export function getAllOtherRelieversTotal(type='base') {
         'sheet': statsSheetPitching
     }, {
         'stat': 'L',
-        'multiplier': 4,
+        'multiplier': -4,
         'sheet': statsSheetPitching
     }, {
         'stat': 'SV',
