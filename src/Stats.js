@@ -5,8 +5,7 @@ const statsSheetPitching = {'base': require('./statistics/pitching_stats.json'),
 const statsSheetPitchingExtra = {'base': require('./statistics/pitching_stats_extra.json'), 'before': require('./statistics/pitching_stats_extra_less_one.json')};
 const player_info = require('./statistics/player_info.json');
 
-
-function getPlayerBattingTotal(name, type='base') {
+export function getPlayerBattingTotal(name, type='base') {
     let total = 0;
     [{
         'stat': 'R',
@@ -70,7 +69,7 @@ function getPlayerBattingTotal(name, type='base') {
     return total; 
 }
 
-function getPlayerPitchingTotal(name, type='base') {
+export function getPlayerPitchingTotal(name, type='base') {
     let total = 0;
     [{
         'stat': 'W',
