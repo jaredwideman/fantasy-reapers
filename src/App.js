@@ -1,7 +1,8 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import {
   Center,
   ChakraProvider,
+  Image,
   theme,
   Select,
   Tab,
@@ -19,8 +20,49 @@ const player_info = require('./statistics/player_info.json');
 function App() {
   const [selectedPlayer, setSelectedPlayer] = useState("");
   const [selectedOwner, setSelectedOwner] = useState("");
+  const egg = useRef("");
   const playerName = player_info.players.find(player => player.name === selectedPlayer);
-  return (
+  let timeout;
+  let eggTimeout;
+  const [eggActivated, setEggActivated] = useState(false);
+
+  useEffect(() => {
+    function handleKeyUp(event) {
+      if (egg.current.length >= 3) {
+        egg.current = '';
+      }
+      if (event.keyCode === 74) {
+        egg.current += "j";
+      } else if (event.keyCode === 69) {
+        egg.current += 'e';
+      } else if (event.keyCode === 78) {
+        egg.current += 'n';
+      } else {
+        egg.current = '';
+      }
+      clearTimeout(timeout);
+      if (egg.current === 'jen')
+      {
+        egg.current = '';
+        setEggActivated(true);
+        clearTimeout(eggTimeout);
+        eggTimeout = setTimeout(() => {
+          setEggActivated(false);
+        }, 18000)
+      }
+      timeout = setTimeout(() => {
+        egg.current = "";
+      }, 1000);
+    }
+
+    document.addEventListener('keyup', handleKeyUp);
+
+    return () => {
+      document.removeEventListener('keyup', handleKeyUp);
+    };
+  }, []);
+
+  const content = (
     <ChakraProvider theme={theme}>
       <Tabs isFitted variant='enclosed'>
         <TabList mb='1em'>
@@ -62,9 +104,12 @@ function App() {
           </TabPanel>
         </TabPanels>
       </Tabs>
-      
     </ChakraProvider>
   );
+
+  const eggContent = <Center><Image src={`egg.gif`} alt={`egg`} display='block' min-height='77%' min-width='1024px' height='auto' width='77%' objectFit='cover'/></Center>;
+
+  return (!eggActivated && content) || eggContent;
 }
 
 export default App;
